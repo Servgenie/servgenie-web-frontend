@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --background: #da1e1e;
+  --foreground: #252525;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+@font-face {
+  font-family: "PolySans Bulky";
+  src: url('/fonts/PolySans-Bulky.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PolySans Slim";
+  src: url('/fonts/PolySans-Slim.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PolySans Median";
+  src: url('/fonts/PolySans-Median.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font style , ps -> Poly sans */
+
+.ps-slim {
+  font-family: 'PolySans Slim', sans-serif;
+}
+
+.ps-bulky {
+  font-family: "PolySans Bulky", sans-serif;
+}
+
+.ps-median {
+  font-family: "PolySans Median", sans-serif;
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  overscroll-behavior-x: hidden;
+}
+
+.card-container {
+  width: 182px;
+  height: 272px;
+  perspective: 1000px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.loader {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid black;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
