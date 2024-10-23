@@ -7,14 +7,13 @@ import Lottie3 from '@/app/lottie/3.json'
 import Lottie4 from '@/app/lottie/4.json'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
-import Lottie from 'lottie-react'
 import LottieHoverAnimation from './lottie-player'
 import { cn } from '@/utils/help'
 
 export const offers = [
     {
         "title": "Any wish",
-        "description": "Servgenie offers a broad task scope, streamlining access to any service you require. If you can hashtag it, you can wish for it.",
+        "description": "Servgenie offers a broad task scope, streamlining access to any service you require. If you can hashtag it, you can wish for it. Why need several apps, when you can do all of it in one?",
         "animationData": Lottie2
     },
     {
@@ -24,7 +23,7 @@ export const offers = [
     },
     {
         "title": "Verified and Trusted",
-        "description": "We prioritize your safety. Servgenie requires providers to pass identity verification and background checks. And to give you the extra confidence to trust our Genies, their ratings, reviews, and success rates are visible on their profile.",
+        "description": "We prioritize your safety. Servgenie requires providers to pass identity verification and background checks. For additional trust, their ratings, and reviews, can also be found on their profile.",
         "animationData": Lottie3
     },
     {

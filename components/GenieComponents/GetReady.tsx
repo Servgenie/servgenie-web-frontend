@@ -16,16 +16,10 @@ const GetReady = () => {
   const [onFocus, setOnFocus] = useState(false);
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [refreshReCaptcha, setRefreshReCaptcha] = useState(false);
-  const [token, setToken] = useState();
 
   const GetReadyRef = useRef(null);
   const mainControls = useAnimation();
   const isInView = useInView(GetReadyRef, { once: false });
-
-  const handleCaptchaVerify = (getToken: any) => {
-    setToken(getToken);
-  };
 
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -170,7 +164,7 @@ const GetReady = () => {
         <p className="ps-slim text-sm text-center sm:text-[1rem] leading-5 w-[693px]">
           By submitting this form you agree to receive Servgenie newsletters and
           accept that the email you provided will be used in accordance with the
-          following Privacy Policy.
+          following privacy Policy.
         </p>
       </motion.div>
     </div>

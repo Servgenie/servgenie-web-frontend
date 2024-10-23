@@ -28,7 +28,7 @@ const Tablet = () => {
     return (
         <div ref={tabletRef} className='hidden md:flex lg:hidden w-full text-[32px] leading-[41px] md:text-[56px] md:leading-[67px] lg:text-[72px] lg:leading-[86px] ps-medium flex-col items-center justify-center ps-bulky'>
             <div className='flex text-center'>
-                <span className="tabletTextSpan">u</span>
+                <span className="tabletTextSpan">U</span>
                 <span className="tabletTextSpan">n</span>
                 <span className="tabletTextSpan">l</span>
                 <span className="tabletTextSpan">o</span>

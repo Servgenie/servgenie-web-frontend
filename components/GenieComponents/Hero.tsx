@@ -62,8 +62,7 @@ const Hero = () => {
                     animate={mainControls}
                     transition={{ duration: 0.3, delay: 0.4, ease: "easeIn" }}
                     className='ps-bulky text-[32px] leading-[38px] md:text-[56px] md:leading-[56px] lg:text-[96px] lg:leading-[96px] text-[#111928] text-center'>
-                    <p>Unlock limitless</p>
-                    <p>Earning potential!</p>
+                    <p>Become our Genie!</p>
                 </motion.div>
 
                 <motion.div
@@ -75,7 +74,7 @@ const Hero = () => {
                     animate={mainControls}
                     transition={{ duration: 0.3, delay: 0.6, ease: "easeIn" }}
                     className='ps-slim text-[#6B7280] text-[12px] leading-[15px] md:text-[18px] md:leading-[23px] lg:text-[24px] lg:leading-[30px] text-center'>
-                    <p>Unlock your earning potential and turn your skills into thriving opportunities with Servgenie.</p>
+                    <p>Unlock your earning potential and endless opportunities with Servgenie.</p>
                 </motion.div>
 
                 <motion.div

@@ -29,7 +29,7 @@ const Mobile = () => {
     return (
         <div ref={mobileRef} className='flex md:hidden w-full text-[30px] leading-[41px] md:text-[56px] md:leading-[67px] lg:text-[72px] lg:leading-[86px] ps-medium flex-col items-center justify-center ps-bulky'>
             <div className='flex text-center '>
-                <span className="mobileTextSpan">u</span>
+                <span className="mobileTextSpan">U</span>
                 <span className="mobileTextSpan">n</span>
                 <span className="mobileTextSpan">l</span>
                 <span className="mobileTextSpan">o</span>

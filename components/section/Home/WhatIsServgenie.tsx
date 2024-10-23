@@ -41,15 +41,11 @@ const WhatIsServgenie = () => {
                     <h1 className='block lg:hidden text-[2rem] mt-10 md:text-[56px] leading-8 ps-bulky text-center w-[100%] '>What is Servgenie?</h1>
 
                     <p className='w-[90%] mx-auto sm:mx-0 md-[80%]  lg:w-[70%] text-[1rem] leading-5 md:text-[24px] lg:text-2xl sm:leading-8 ps-slim text-center lg:text-start text-[#6B7280] sm:text-[#2F2F2F]'>
-                        Servgenie aims to revolutionize the service market
-                        by providing a versatile platform for all types of
-                        service needs, making it the ultimate one-stop
-                        app for any kind of service.
+                        Servgenie aims to revolutionize the service market by providing a one-stop platform to find and hire
+                        skilled freelancers, giving you access to a wide range of services, all in one place.
                         <br />
                         <br />
-                        Servgenie aims to revolutionize the service
-                        market by providing a versatile.
-
+                        As our “Wisher”, you can make one request for multiple tasks, and our verified professional aka “Genies” will fulfill it for you.
                     </p>
                 </motion.div>
 

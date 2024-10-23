@@ -218,7 +218,7 @@ const WhatWeOffer = () => {
                             <div className='self-end flex flex-col gap-1'>
                                 <p className=' ps-bulky leading-[28px] text-[24px] text-[#101828]'>Any wish</p>
 
-                                <p className='w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]'>Servgenie offers a broad task scope, streamlining access to any service you require. If you can hashtag it, you can wish for it.
+                                <p className='w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]'>Servgenie offers a broad task scope, streamlining access to any service you require. If you can hashtag it, you can wish for it. Why need several apps, when you can do all of it in one?
                                 </p>
                             </div>
 
@@ -347,7 +347,9 @@ const WhatWeOffer = () => {
                         <Lottie animationData={Lottie2} className='w-[95%]' />
 
                         <h1 className='text-[2.3rem] ps-bulky'>Any wish</h1>
-                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil illum quaerat quia in incidunt. Nulla deleniti ex</p>
+                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
+                            Servgenie offers a broad task scope, streamlining access to any service you require. If you can hashtag it, you can wish for it. Why need several apps, when you can do all of it in one?
+                        </p>
 
                     </motion.div>
 
@@ -366,7 +368,9 @@ const WhatWeOffer = () => {
                         <Lottie animationData={Lottie1} className='w-[95%]' />
 
                         <h1 className='text-[2.3rem] ps-bulky'>Ease of Use</h1>
-                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil illum quaerat quia in incidunt. Nulla deleniti ex</p>
+                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
+                        Finding help doesn't have to be complicated. No need to spend another 30 minutes filling up forms. Just make your wish, tag it, and our genies will be at your fingertips.
+                        </p>
 
                     </motion.div>
 
@@ -385,7 +389,9 @@ const WhatWeOffer = () => {
                         <Lottie animationData={Lottie3} className='w-[95%]' />
 
                         <h1 className='text-[2.3rem] ps-bulky'>Verified Games</h1>
-                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil illum quaerat quia in incidunt. Nulla deleniti ex</p>
+                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
+                        We prioritize your safety. Servgenie requires providers to pass identity verification and background checks. For additional trust, their ratings, and reviews, can also be found on their profile.
+                        </p>
 
 
                     </motion.div>
@@ -405,7 +411,9 @@ const WhatWeOffer = () => {
                         <Lottie animationData={Lottie4} className='w-[95%]' />
 
                         <h1 className='text-[2.3rem] ps-bulky'>Any wish</h1>
-                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil illum quaerat quia in incidunt. Nulla deleniti ex</p>
+                        <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
+                        As the Wisher, you get to seal the deal! Wishes receive bids from Genies, allowing you to select or negotiate for the best deal.
+                        </p>
 
 
                     </motion.div>
