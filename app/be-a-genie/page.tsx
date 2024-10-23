@@ -10,7 +10,7 @@ import Hero from '@/components/GenieComponents/Hero';
 const GenieBenefits = dynamic(() => import('@/components/GenieComponents/GenieBenefits'), { ssr: false });
 
 const Page = () => {
-    const reCaptchaKey = process.env.RECAPTCHA_KEY!;
+    const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY!;
 
     return (
         <>

@@ -7,12 +7,7 @@ import Navbar from "@/components/common/Navbar";
 import GetReady from "@/components/section/Home/GetReady";
 import WhatIsServgenie from "@/components/section/Home/WhatIsServgenie";
 import Hero from '@/components/section/Home/Hero';
-
-const GoogleReCaptchaProvider = dynamic(
-  () => import('react-google-recaptcha-v3').then(mod => mod.GoogleReCaptchaProvider),
-  { ssr: false }
-);
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const WhatWeOffer = dynamic(
   () => import('@/components/section/Home/WhatWeOffer'),
@@ -21,7 +16,7 @@ const WhatWeOffer = dynamic(
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const reCaptchaKey = process.env.RECAPTCHA_KEY!;
+  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY!;
 
   useEffect(() => {
     setMounted(true);

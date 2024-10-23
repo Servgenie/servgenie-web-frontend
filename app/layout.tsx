@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScrolling from "@/components/common/lenis";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 export const metadata: Metadata = {
   title: "Servgenie",
