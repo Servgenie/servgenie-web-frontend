@@ -35,6 +35,7 @@ const GetReady = () => {
     setLoading(true);
 
     try {
+      const contactListId = process.env.BREVO_CONTACT_LIST_ID;
       const response = await axios.post(
         "/api/subscribe",
         {
@@ -46,7 +47,7 @@ const GetReady = () => {
           "emailBlacklisted": false,
           "smsBlacklisted": false,
           "listIds": [
-            2
+            contactListId
           ],
           "updateEnabled": true
         },
