@@ -21,7 +21,7 @@ const WhatWeOffer = dynamic(
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY!;
+  const reCaptchaKey = process.env.RECAPTCHA_KEY!;
 
   useEffect(() => {
     setMounted(true);

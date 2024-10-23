@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Welcome to the Frontend Codebase of the Servgenie Website! 🚀
+
+The Servgenie website is a subscription platform where users can sign up to receive exclusive updates about the Servgenie app. Stay informed on the latest features, upcoming events, and launch details, as we build a revolutionary service platform connecting consumers with skilled service providers.
+
+Visit our live website at https://servgenie.co
 
 ## Prerequisites
 
@@ -43,8 +47,15 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Known Issues
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Git error: RPC failed with HTTP 400
+`error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400`
+If you get the RPC failed error above, this is due to pushing large assets. Simply run `git config http.postBuffer 524288000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Join Us
+
+Be a part of an innovative journey, and shape the future of Servgenie!
+- [Instagram](https://www.instagram.com/servgenie)
+- [LinkedIn](https://www.linkedin.com/company/servgenie)
+- [Facebook](https://www.facebook.com/servgenie.co)

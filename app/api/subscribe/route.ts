@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-const BREVO_API_URL = process.env.NEXT_PUBLIC_BREVO_API_URL || "";
-const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_API_KEY || "";
+const BREVO_API_URL = process.env.BREVO_API_URL || "";
+const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 
 export async function POST(request: Request) {
     try {
