@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Desktop from "./wordAnimations/Desktop";
 import Tablet from "./wordAnimations/Tablet";
 import Mobile from "./wordAnimations/Mobile";
@@ -27,7 +27,7 @@ const GetReady = () => {
     setToken(getToken);
   };
 
-  const handleSubscribe = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const token = executeRecaptcha && await executeRecaptcha('newsletter_subscribe');
@@ -72,7 +72,7 @@ const GetReady = () => {
     } finally {
       setLoading(false);
     }
-  }, [executeRecaptcha]);
+  };
 
   useEffect(() => {
     if (isInView) {
