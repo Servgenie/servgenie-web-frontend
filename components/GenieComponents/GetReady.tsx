@@ -164,7 +164,7 @@ const GetReady = () => {
         <p className="ps-slim text-sm text-center sm:text-[1rem] leading-5 w-[693px]">
           By submitting this form you agree to receive Servgenie newsletters and
           accept that the email you provided will be used in accordance with the
-          following privacy Policy.
+          following privacy policy.
         </p>
       </motion.div>
     </div>

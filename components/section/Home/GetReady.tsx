@@ -8,12 +8,11 @@ import Mobile from "./wordAnimations/Mobile";
 import { useAnimation, useInView, motion } from "framer-motion";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import {
-  useGoogleReCaptcha,
-} from "react-google-recaptcha-v3";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import Link from "next/link";
 
 const GetReady = () => {
-  const { executeRecaptcha } =  useGoogleReCaptcha();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,7 +25,8 @@ const GetReady = () => {
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const token = executeRecaptcha && await executeRecaptcha('newsletter_subscribe');
+    const token =
+      executeRecaptcha && (await executeRecaptcha("newsletter_subscribe"));
     if (!token) {
       toast.error(
         "We've detected a bot-like behavior. Please try again later."
@@ -160,13 +160,21 @@ const GetReady = () => {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.3, delay: 0.8, ease: "easeIn" }}
-        className="w-[95%] sm:w-[700px]   flex items-start sm:items-center justify-between gap-5 cursor-pointer"
+        transition={{ duration: 0.3, delay: 0.5, ease: "easeIn" }}
+        className="w-[95%] sm:w-[620px] flex items-start sm:items-center justify-between gap-5 cursor-pointer"
       >
-        <p className="ps-slim text-sm sm:text-[1rem] text-center leading-5 w-[693px]">
+        <p className="ps-slim text-sm sm:text-[1rem] text-center">
           By submitting this form you agree to receive Servgenie newsletters and
           accept that the email you provided will be used in accordance with the
-          following privacy Policy.
+          following
+          <Link
+            className="hover:underline pl-1 text-blue-500"
+            target="_blank"
+            href="/legal/privacy-policy"
+          >
+            privacy policy
+          </Link>
+          .
         </p>
         <div className="flex items-center border border-red-500 gap-2"></div>
       </motion.div>
