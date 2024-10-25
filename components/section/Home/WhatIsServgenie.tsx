@@ -45,7 +45,7 @@ const WhatIsServgenie = () => {
                         skilled freelancers, giving you access to a wide range of services, all in one place.
                         <br />
                         <br />
-                        As our “Wisher”, you can make one request for multiple tasks, and our verified professional aka “Genies” will fulfill it for you.
+                        As our “Wisher”, you can make one request for multiple tasks, and our verified professionals aka “Genies” will grant it.
                     </p>
                 </motion.div>
 

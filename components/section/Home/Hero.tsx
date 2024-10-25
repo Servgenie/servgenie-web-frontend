@@ -61,7 +61,7 @@ const Hero = () => {
                             <p>h</p>
                         </div>
 
-                        <p>Any time, Any where</p>
+                        <p>Anytime, Anywhere</p>
 
                     </div>
 
