@@ -236,7 +236,8 @@ const WhatWeOffer = () => {
                             <div className='self-end flex flex-col gap-1'>
                                 <p className=' ps-bulky leading-[28px] text-[24px] text-[#101828]'>Ease of Use</p>
 
-                                <p className='w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]'>Finding help doesn’t have to be complicated. No need to spend another 30 minutes filling up forms. Just make your wish, tag it, and our genies will be at your fingertips.
+                                <p className='w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]'>
+                                Finding help doesn’t have to be complicated. No need to answer pages of questions, and confirm with providers one by one. Just make your wish, tag it, and our genies will come to you.
                                 </p>
                             </div>
 
@@ -369,7 +370,7 @@ const WhatWeOffer = () => {
 
                         <h1 className='text-[2.3rem] ps-bulky'>Ease of Use</h1>
                         <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
-                        Finding help doesn't have to be complicated. No need to spend another 30 minutes filling up forms. Just make your wish, tag it, and our genies will be at your fingertips.
+                        Finding help doesn’t have to be complicated. No need to answer pages of questions, and confirm with providers one by one. Just make your wish, tag it, and our genies will come to you.
                         </p>
 
                     </motion.div>
@@ -388,7 +389,7 @@ const WhatWeOffer = () => {
 
                         <Lottie animationData={Lottie3} className='w-[95%]' />
 
-                        <h1 className='text-[2.3rem] ps-bulky'>Verified Games</h1>
+                        <h1 className='text-[2.3rem] ps-bulky'>Verified and Trusted</h1>
                         <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
                         We prioritize your safety. Servgenie requires providers to pass identity verification and background checks. For additional trust, their ratings, and reviews, can also be found on their profile.
                         </p>
@@ -410,7 +411,7 @@ const WhatWeOffer = () => {
 
                         <Lottie animationData={Lottie4} className='w-[95%]' />
 
-                        <h1 className='text-[2.3rem] ps-bulky'>Any wish</h1>
+                        <h1 className='text-[2.3rem] ps-bulky'>Price Negotiation</h1>
                         <p className='text-center text-[#727171] text-[1rem] leading-6 ps-slim'>
                         As the Wisher, you get to seal the deal! Wishes receive bids from Genies, allowing you to select or negotiate for the best deal.
                         </p>

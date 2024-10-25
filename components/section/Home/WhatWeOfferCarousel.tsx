@@ -18,7 +18,7 @@ export const offers = [
     },
     {
         "title": "Ease of Use",
-        "description": "Finding help doesn't have to be complicated. No need to spend another 30 minutes filling up forms. Just make your wish, tag it, and our genies will be at your fingertips.",
+        "description": "Finding help doesn’t have to be complicated. No need to answer pages of questions, and confirm with providers one by one. Just make your wish, tag it, and our genies will come to you.",
         "animationData": Lottie1
     },
     {
