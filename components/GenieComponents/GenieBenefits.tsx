@@ -351,7 +351,7 @@ const GenieBenefits = () => {
 
                         <Lottie animationData={Lottie1} className='w-[95%] mb-4' />
 
-                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] ps-bulky'>Be a Jack of All Trades</h1>
+                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] text-center ps-bulky'>Be a Jack of All Trades</h1>
                         <p className='text-[12px] leading-3-[16px] md:text-[15px] leading-[16px] text-center text-[#727171] ps-slim'>
                             With Servgenie, you’re not limited to one type of service. From being a fitness coach, bodyguard, caregiver, to taking on unique tasks like companionship, waiting in lines, and more, you can be a jack of all trades, and still be a master of many.
                         </p>
@@ -370,7 +370,7 @@ const GenieBenefits = () => {
 
                         <Lottie animationData={Lottie2} className='w-[95%] mb-4' />
 
-                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] ps-bulky'>Work Close, Earn Fast</h1>
+                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] text-center ps-bulky'>Work Close, Earn Fast</h1>
                         <p className='text-[12px] leading-3-[16px] md:text-[15px] leading-[16px] text-center text-[#727171] ps-slim'>
                             Our geo-location integration allows you to see on-demand requests from clients nearby, cutting down travel time and enabling you to complete tasks quickly. You can take on multiple jobs in your area with ease, maximizing your earnings while minimizing travel hassles. Time is money, and we help you save both.
                         </p>
@@ -389,7 +389,7 @@ const GenieBenefits = () => {
 
                         <Lottie animationData={Lottie3} className='w-[95%] mb-4' />
 
-                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] ps-bulky'>Set Your Own Rates</h1>
+                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] text-center ps-bulky'>Set Your Own Rates</h1>
                         <p className='text-[12px] leading-3-[16px] md:text-[15px] leading-[16px] text-center text-[#727171] ps-slim'>
                             With Servgenie’s service bidding, you can initiate offers on available wishes and set the value for your work. You decide your worth, and we ensure you keep 100% of what you earn—plus tips! Payments are handled securely through our platform, so you can focus on delivering quality service while we take care of the rest.
                         </p>
@@ -407,7 +407,7 @@ const GenieBenefits = () => {
 
                         <Lottie animationData={Lottie4} className='w-[95%] mb-4' />
 
-                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] ps-bulky'>Work on Your Teams</h1>
+                        <h1 className='text-[24px] leading-[28px] md:text-[24px] md:leading-[28px] text-center ps-bulky'>Work on Your Teams</h1>
                         <p className='text-[12px] leading-3-[16px] md:text-[15px] leading-[16px] text-center text-[#727171] ps-slim'>
                             Enjoy complete flexibility in your work. Choose the services you offer and jobs you take, decide when and where you work, and create a schedule that fits your lifestyle. It's all about freedom and independence—work on your terms and be your own boss!
                         </p>
