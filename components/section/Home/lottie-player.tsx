@@ -22,7 +22,7 @@ const LottieHoverAnimation: React.FC<LottieHoverProps> = ({
   useEffect(() => {
     if (lottieRef.current) {
       lottieRef.current.setSpeed(1.5);
-      //
+
       if (isPlaying && !isAnimating) {
         setIsAnimating(true);
         lottieRef.current.play();
