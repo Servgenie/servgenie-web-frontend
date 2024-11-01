@@ -18,7 +18,7 @@ const Mobile = () => {
                 stagger: 0.05,
                 scrollTrigger: {
                     trigger: mobileRef.current,
-                    start: "top-=250 top",
+                    start: "top-=350 top",
                     end: "top-=150 top",
                     scrub: true,
                 }

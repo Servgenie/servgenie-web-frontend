@@ -17,8 +17,8 @@ const Tablet = () => {
                 stagger: 0.05,
                 scrollTrigger: {
                     trigger: tabletRef.current,
-                    start: "top-=100 top",
-                    end: "top top",
+                    start: "top-=1000 top",
+                    end: "top-=700 top",
                     scrub: true,
                 }
             }
