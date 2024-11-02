@@ -155,7 +155,7 @@ const GetReady = () => {
         <p className="ps-slim w-[483px] text-center text-sm sm:text-[1rem]">
           By submitting this form you agree to receive Servgenie newsletters and accept our
           <Link
-            className="pl-1 pr-1 text-[#8f53ff] hover:underline"
+            className="pl-1 pr-1 text-[#358ede] hover:underline"
             target="_blank"
             href="../legal/terms-of-service"
           >
@@ -163,7 +163,7 @@ const GetReady = () => {
           </Link>
           and
           <Link
-            className="pl-1 text-[#8f53ff] hover:underline"
+            className="pl-1 text-[#358ede] hover:underline"
             target="_blank"
             href="/legal/privacy-policy"
           >
