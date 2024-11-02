@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --background: #da1e1e;
   --foreground: #252525;
@@ -16,23 +14,22 @@
   }
 }
 
-
 @font-face {
-  font-family: "PolySans Bulky";
+  font-family: 'PolySans Bulky';
   src: url('/fonts/PolySans-Bulky.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "PolySans Slim";
+  font-family: 'PolySans Slim';
   src: url('/fonts/PolySans-Slim.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "PolySans Median";
+  font-family: 'PolySans Median';
   src: url('/fonts/PolySans-Median.otf');
   font-weight: normal;
   font-style: normal;
@@ -45,14 +42,12 @@
 }
 
 .ps-bulky {
-  font-family: "PolySans Bulky", sans-serif;
+  font-family: 'PolySans Bulky', sans-serif;
 }
 
 .ps-median {
-  font-family: "PolySans Median", sans-serif;
+  font-family: 'PolySans Median', sans-serif;
 }
-
-
 
 @layer utilities {
   .text-balance {

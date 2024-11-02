@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import Lottie from "lottie-react";
-import React, { useEffect, useRef, useState } from "react";
-import Lottie1 from "@/app/lottie/genie/1.json";
-import Lottie2 from "@/app/lottie/genie/2.json";
-import Lottie3 from "@/app/lottie/genie/3.json";
-import Lottie4 from "@/app/lottie/genie/4.json";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useAnimation, useInView, motion } from "framer-motion";
+import Lottie from 'lottie-react';
+import React, { useEffect, useRef, useState } from 'react';
+import Lottie1 from '@/app/lottie/genie/1.json';
+import Lottie2 from '@/app/lottie/genie/2.json';
+import Lottie3 from '@/app/lottie/genie/3.json';
+import Lottie4 from '@/app/lottie/genie/4.json';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useAnimation, useInView, motion } from 'framer-motion';
 
 const WhatWeOffer = () => {
   const [activeOffer, setActiveOffer] = useState(1);
@@ -31,21 +31,21 @@ const WhatWeOffer = () => {
 
     const scrollDiv = ScrollTrigger.create({
       trigger: whatWeOfferRef.current,
-      start: "top top",
-      end: "bottom bottom",
-      pin: ".scrollDiv",
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: '.scrollDiv',
       pinSpacing: true,
       onUpdate: (self) => {
         const progress = self.progress * 100;
 
         const newHeight = (progress / 100) * maxSVGHeight;
 
-        gsap.to(".fill-rect", {
+        gsap.to('.fill-rect', {
           height: newHeight,
           y: 0,
           duration: 0.1,
-          ease: "none",
-          fill: "#8F52FF",
+          ease: 'none',
+          fill: '#8F52FF',
         });
 
         // set active index
@@ -63,67 +63,67 @@ const WhatWeOffer = () => {
         }
 
         if (progress < 25) {
-          gsap.to(".rightDiv-1", {
-            y: "2vh",
+          gsap.to('.rightDiv-1', {
+            y: '2vh',
             opacity: 1,
             duration: 1,
           });
 
           // forces next div out of the scroll
-          gsap.to(".rightDiv-2", {
-            y: "45vh",
+          gsap.to('.rightDiv-2', {
+            y: '45vh',
             opacity: 1,
             duration: 1,
           });
         } else if (progress > 25 && progress < 63) {
           // forces prev div out of the scroll
-          gsap.to(".rightDiv-1", {
-            y: "-100rem",
+          gsap.to('.rightDiv-1', {
+            y: '-100rem',
             opacity: 0,
             duration: 1,
           });
 
-          gsap.to(".rightDiv-2", {
-            y: "-25rem",
+          gsap.to('.rightDiv-2', {
+            y: '-25rem',
             opacity: 1,
             duration: 1,
           });
 
           // forces next div out of the scroll
-          gsap.to(".rightDiv-3", {
-            y: "45vh",
+          gsap.to('.rightDiv-3', {
+            y: '45vh',
             opacity: 1,
             duration: 1,
           });
         } else if (progress > 63 && progress < 85) {
           // forces prev div out of the scroll
-          gsap.to(".rightDiv-2", {
-            y: "-100rem",
+          gsap.to('.rightDiv-2', {
+            y: '-100rem',
             opacity: 0,
             duration: 1,
           });
 
-          gsap.to(".rightDiv-3", {
-            y: "-53rem",
+          gsap.to('.rightDiv-3', {
+            y: '-53rem',
             opacity: 1,
             duration: 1,
           });
 
           // forces next div out of the scroll
-          gsap.to(".rightDiv-4", {
-            y: "15vh",
+          gsap.to('.rightDiv-4', {
+            y: '15vh',
             opacity: 1,
             duration: 1,
           });
         } else if (progress > 55) {
-          gsap.to(".rightDiv-3", {
-            y: "-150rem",
+          gsap.to('.rightDiv-3', {
+            y: '-150rem',
             opacity: 0,
             duration: 1,
           });
 
-          gsap.to(".rightDiv-4", {
-            y: "-81rem",
+          gsap.to('.rightDiv-4', {
+            y: '-81rem',
             opacity: 1,
             duration: 1,
           });
@@ -140,41 +140,40 @@ const WhatWeOffer = () => {
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("visible");
+      mainControls.start('visible');
     } else {
-      mainControls.start("hidden");
+      mainControls.start('hidden');
     }
   }, [isInView, mainControls]);
 
   const scrollToSection = (index: number) => {
-    if (typeof window == "undefined") return;
+    if (typeof window == 'undefined') return;
 
     const progress = (index - 1) * 0.25 + 0.125; // Center of each section
     if (scrollTriggerRef.current) {
       let scrollPosition =
         scrollTriggerRef.current.start +
-        (scrollTriggerRef.current.end - scrollTriggerRef.current.start) *
-          progress;
+        (scrollTriggerRef.current.end - scrollTriggerRef.current.start) * progress;
 
       if (index == 3) {
         scrollPosition = scrollPosition + 80;
       }
       window.scrollTo({
         top: scrollPosition,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   };
 
   return (
     <div
-      className="mt-[56px] lg:mt-[9rem] w-[95%] mx-auto lg:h-[400vh]"
+      className="mx-auto mt-[56px] w-[95%] lg:mt-[9rem] lg:h-[400vh]"
       id="features"
       ref={whatWeOfferRef}
     >
-      <div className="w-full h-full lg:max-h-[48rem] bg-[#EDE8FF] rounded-[24px] sm:rounded-[3rem] py-4 flex flex-col gap-[57px] scrollDiv ">
-        <div className="w-[95%] lg:max-w-[85rem] mx-auto h-[10%] mt-10 md:mt-[20px] lg:mt-[56px] px-6 flex justify-between items-center ">
-          <p className="text-[2.2rem] sm:text-[4rem] ps-bulky text-center w-[100%] leading-[30px] sm:leading-[86px] mx-auto ">
+      <div className="scrollDiv flex h-full w-full flex-col gap-[57px] rounded-[24px] bg-[#EDE8FF] py-4 sm:rounded-[3rem] lg:max-h-[48rem]">
+        <div className="mx-auto mt-10 flex h-[10%] w-[95%] items-center justify-between px-6 md:mt-[20px] lg:mt-[56px] lg:max-w-[85rem]">
+          <p className="ps-bulky mx-auto w-[100%] text-center text-[2.2rem] leading-[30px] sm:text-[4rem] sm:leading-[86px]">
             What we offer
           </p>
         </div>
@@ -183,10 +182,10 @@ const WhatWeOffer = () => {
 
         {/* for desktop */}
 
-        <div className="hidden lg:flex max-w-[85rem] mx-auto overflow-hidden mb-10 relative lg:max-h-[80rem] ">
+        <div className="relative mx-auto mb-10 hidden max-w-[85rem] overflow-hidden lg:flex lg:max-h-[80rem]">
           {/* left div */}
 
-          <div className="absolute top-16 left-9 -z-10">
+          <div className="absolute left-9 top-16 -z-10">
             <svg
               width="6"
               height="340"
@@ -195,133 +194,103 @@ const WhatWeOffer = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect width="6" height="340" rx="3" fill="white" />
-              <rect
-                className="fill-rect"
-                width="6"
-                height="0"
-                y="0"
-                rx="3"
-                fill="#8F52FF"
-              />
+              <rect className="fill-rect" width="6" height="0" y="0" rx="3" fill="#8F52FF" />
             </svg>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center gap-6  ">
+          <div className="flex flex-1 flex-col justify-center gap-6">
             <div
               onClick={() => scrollToSection(1)}
-              className="w-full cursor-pointer flex items-center justify-center gap-4 pl-5  "
+              className="flex w-full cursor-pointer items-center justify-center gap-4 pl-5"
             >
               <div
-                className={`w-[48px] h-[36px] border-2 border-[#8F52FF] flex items-center justify-center rounded-full self-start px-2.5
-                                ${
-                                  activeOffer === 1
-                                    ? "bg-[#8F52FF] text-white"
-                                    : "bg-white text-black"
-                                }`}
+                className={`flex h-[36px] w-[48px] items-center justify-center self-start rounded-full border-2 border-[#8F52FF] px-2.5 ${
+                  activeOffer === 1 ? 'bg-[#8F52FF] text-white' : 'bg-white text-black'
+                }`}
               >
-                <p className="ps-bulky leading-[28px] text-[20px]  ">1</p>
+                <p className="ps-bulky text-[20px] leading-[28px]">1</p>
               </div>
 
-              <div className="self-end flex flex-col gap-1">
-                <p className=" ps-bulky leading-[28px] text-[24px] text-[#101828]">
-                  Any wish
-                </p>
+              <div className="flex flex-col gap-1 self-end">
+                <p className="ps-bulky text-[24px] leading-[28px] text-[#101828]">Any wish</p>
 
-                <p className="w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]">
-                  Servgenie offers a broad task scope, streamlining access to
-                  any service you require. If you can hashtag it, you can wish
-                  for it. Why need several apps, when you can do all of it in
-                  one?
+                <p className="ps-slim w-[80%] text-[16px] leading-[20.8px] text-[#727171]">
+                  Servgenie offers a broad task scope, streamlining access to any service you
+                  require. If you can hashtag it, you can wish for it. Why need several apps, when
+                  you can do all of it in one?
                 </p>
               </div>
             </div>
 
             <div
               onClick={() => scrollToSection(2)}
-              className="w-full cursor-pointer flex items-center justify-center gap-4 pl-5  "
+              className="flex w-full cursor-pointer items-center justify-center gap-4 pl-5"
             >
               <div
-                className={` flex items-center justify-center  rounded-full self-start px-2.5 py-0.5
-                                ${
-                                  activeOffer === 2
-                                    ? "bg-[#8F52FF] text-white"
-                                    : "bg-white text-black"
-                                }
-                                ${visisted2 && "border-2 border-[#8F52FF]"}
-                                `}
+                className={`flex items-center justify-center self-start rounded-full px-2.5 py-0.5 ${
+                  activeOffer === 2 ? 'bg-[#8F52FF] text-white' : 'bg-white text-black'
+                } ${visisted2 && 'border-2 border-[#8F52FF]'} `}
               >
-                <p className="ps-bulky leading-[28px] text-[20px]  ">2</p>
+                <p className="ps-bulky text-[20px] leading-[28px]">2</p>
               </div>
 
-              <div className="self-end flex flex-col gap-1">
-                <p className=" ps-bulky leading-[28px] text-[24px] text-[#101828]">
-                  Ease of Use
-                </p>
+              <div className="flex flex-col gap-1 self-end">
+                <p className="ps-bulky text-[24px] leading-[28px] text-[#101828]">Ease of Use</p>
 
-                <p className="w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]">
-                  Finding help doesn’t have to be complicated. No need to answer
-                  pages of questions, and confirm with providers one by one.
-                  Just make your wish, tag it, and our genies will come to you.
+                <p className="ps-slim w-[80%] text-[16px] leading-[20.8px] text-[#727171]">
+                  Finding help doesn’t have to be complicated. No need to answer pages of questions,
+                  and confirm with providers one by one. Just make your wish, tag it, and our genies
+                  will come to you.
                 </p>
               </div>
             </div>
 
             <div
               onClick={() => scrollToSection(3)}
-              className="w-full cursor-pointer flex items-center justify-center gap-4 pl-5 "
+              className="flex w-full cursor-pointer items-center justify-center gap-4 pl-5"
             >
               <div
-                className={`flex items-center justify-center self-start rounded-full px-2.5 py-1
-                                ${
-                                  activeOffer === 3
-                                    ? "bg-[#8F52FF] text-white"
-                                    : "bg-white text-black"
-                                }
-                                ${visisted3 && "border-2 border-[#8F52FF]"}
-                            `}
+                className={`flex items-center justify-center self-start rounded-full px-2.5 py-1 ${
+                  activeOffer === 3 ? 'bg-[#8F52FF] text-white' : 'bg-white text-black'
+                } ${visisted3 && 'border-2 border-[#8F52FF]'} `}
               >
-                <p className="ps-bulky leading-[28px] text-[20px]  ">3</p>
+                <p className="ps-bulky text-[20px] leading-[28px]">3</p>
               </div>
 
-              <div className="self-end flex flex-col gap-1">
-                <p className="ps-bulky leading-[28px] text-[24px] text-[#101828]">
-                  Verified & Trusted{" "}
+              <div className="flex flex-col gap-1 self-end">
+                <p className="ps-bulky text-[24px] leading-[28px] text-[#101828]">
+                  Verified & Trusted{' '}
                 </p>
 
-                <p className="w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]">
-                  We prioritize your safety. Servgenie requires providers to
-                  pass identity verification and background checks. And to give
-                  you the extra confidence to trust our Genies, their ratings,
-                  reviews, and success rates are visible on their profile.
+                <p className="ps-slim w-[80%] text-[16px] leading-[20.8px] text-[#727171]">
+                  We prioritize your safety. Servgenie requires providers to pass identity
+                  verification and background checks. And to give you the extra confidence to trust
+                  our Genies, their ratings, reviews, and success rates are visible on their
+                  profile.
                 </p>
               </div>
             </div>
 
             <div
               onClick={() => scrollToSection(4)}
-              className="w-full cursor-pointer flex items-center justify-center gap-4 pl-5 "
+              className="flex w-full cursor-pointer items-center justify-center gap-4 pl-5"
             >
               <div
-                className={`w-[48px] h-[36px]   flex items-center justify-center self-start rounded-full ${
-                  activeOffer === 4
-                    ? "bg-[#8F52FF] text-white"
-                    : "bg-white text-black"
-                }
-                            ${visisted4 && "border-2 border-[#8F52FF]"}
-                            `}
+                className={`flex h-[36px] w-[48px] items-center justify-center self-start rounded-full ${
+                  activeOffer === 4 ? 'bg-[#8F52FF] text-white' : 'bg-white text-black'
+                } ${visisted4 && 'border-2 border-[#8F52FF]'} `}
               >
-                <p className="ps-bulky leading-[28px] text-[20px]  ">4</p>
+                <p className="ps-bulky text-[20px] leading-[28px]">4</p>
               </div>
 
-              <div className="self-end flex flex-col gap-1">
-                <p className=" ps-bulky leading-[28px] text-[24px] text-[#101828]">
+              <div className="flex flex-col gap-1 self-end">
+                <p className="ps-bulky text-[24px] leading-[28px] text-[#101828]">
                   Price Negotiation
                 </p>
 
-                <p className="w-[80%]  ps-slim text-[16px] leading-[20.8px] text-[#727171]">
-                  As the Wisher, you get to seal the deal! Wishes receive bids
-                  from Genies, allowing you to select or negotiate for the best
-                  deal.
+                <p className="ps-slim w-[80%] text-[16px] leading-[20.8px] text-[#727171]">
+                  As the Wisher, you get to seal the deal! Wishes receive bids from Genies, allowing
+                  you to select or negotiate for the best deal.
                 </p>
               </div>
             </div>
@@ -329,55 +298,36 @@ const WhatWeOffer = () => {
 
           {/* right div */}
 
-          <div className="flex-1 flex items-center justify-start flex-col overflow-hidden relative rightParentDiv">
-            <div className="w-[608px] min-h-[442px] bg-white rounded-[48px] rightDiv-1">
-              <div className="w-full h-full flex items-center justify-center">
-                <Lottie
-                  animationData={Lottie2}
-                  className="h-[85%]"
-                  loop={true}
-                  autoPlay={true}
-                />
+          <div className="rightParentDiv relative flex flex-1 flex-col items-center justify-start overflow-hidden">
+            <div className="rightDiv-1 min-h-[442px] w-[608px] rounded-[48px] bg-white">
+              <div className="flex h-full w-full items-center justify-center">
+                <Lottie animationData={Lottie2} className="h-[85%]" loop={true} autoPlay={true} />
               </div>
             </div>
 
-            <div className="w-[608px] min-h-[442px] bg-white rounded-[48px] rightDiv-2">
-              <div className="w-full h-full flex items-center justify-center">
-                <Lottie
-                  animationData={Lottie1}
-                  className="h-[85%]"
-                  loop={true}
-                  autoPlay={true}
-                />
+            <div className="rightDiv-2 min-h-[442px] w-[608px] rounded-[48px] bg-white">
+              <div className="flex h-full w-full items-center justify-center">
+                <Lottie animationData={Lottie1} className="h-[85%]" loop={true} autoPlay={true} />
               </div>
             </div>
 
-            <div className="w-[608px] min-h-[442px] bg-white rounded-[48px] rightDiv-3">
-              <div className="w-full h-full flex items-center justify-center">
-                <Lottie
-                  animationData={Lottie3}
-                  className="h-[85%]"
-                  loop={true}
-                  autoPlay={true}
-                />
+            <div className="rightDiv-3 min-h-[442px] w-[608px] rounded-[48px] bg-white">
+              <div className="flex h-full w-full items-center justify-center">
+                <Lottie animationData={Lottie3} className="h-[85%]" loop={true} autoPlay={true} />
               </div>
             </div>
 
-            <div className="w-[608px] min-h-[442px] bg-white rounded-[48px] rightDiv-4">
-              <div className="w-full h-full flex items-center justify-center">
-                <Lottie
-                  animationData={Lottie4}
-                  className="h-[85%]"
-                  loop={true}
-                  autoPlay={true}
-                />
+            <div className="rightDiv-4 min-h-[442px] w-[608px] rounded-[48px] bg-white">
+              <div className="flex h-full w-full items-center justify-center">
+                <Lottie animationData={Lottie4} className="h-[85%]" loop={true} autoPlay={true} />
               </div>
             </div>
           </div>
         </div>
 
         {/* for tablet and mobile */}
-        <div className="w-full h-full flex lg:hidden flex-col sm:flex-row items-center justify-center gap-9 flex-wrap ">
+
+        <div className="flex h-full w-full flex-col flex-wrap items-center justify-center gap-9 sm:flex-row lg:hidden">
           {/* card 1 */}
 
           <motion.div
@@ -387,16 +337,16 @@ const WhatWeOffer = () => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
-            className="w-[95%] md:w-[330px] md:h-[460px] lg:w-[419px] lg:h-[480px] rounded-[2.5rem] bg-white p-4 flex items-center justify-center flex-col gap-2"
+            transition={{ duration: 0.3, delay: 0.2, ease: 'easeIn' }}
+            className="flex w-[95%] flex-col items-center justify-center gap-2 rounded-[2.5rem] bg-white p-4 md:h-[460px] md:w-[330px] lg:h-[480px] lg:w-[419px]"
           >
             <Lottie animationData={Lottie2} className="w-[95%]" />
 
-            <h1 className="text-[2rem] text-center ps-bulky">Any wish</h1>
-            <p className="text-center text-[#727171] text-[1rem] leading-6 ps-slim">
-              Servgenie offers a broad task scope, streamlining access to any
-              service you require. If you can hashtag it, you can wish for it.
-              Why need several apps, when you can do all of it in one?
+            <h1 className="ps-bulky text-center text-[2rem]">Any wish</h1>
+            <p className="ps-slim text-center text-[1rem] leading-6 text-[#727171]">
+              Servgenie offers a broad task scope, streamlining access to any service you require.
+              If you can hashtag it, you can wish for it. Why need several apps, when you can do all
+              of it in one?
             </p>
           </motion.div>
 
@@ -409,16 +359,16 @@ const WhatWeOffer = () => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{ duration: 0.3, delay: 0.5, ease: "easeIn" }}
-            className="w-[95%] md:w-[330px] md:h-[460px] lg:w-[419px] lg:h-[480px] rounded-[2.5rem] bg-white p-4 flex items-center justify-center flex-col gap-2 relative"
+            transition={{ duration: 0.3, delay: 0.5, ease: 'easeIn' }}
+            className="relative flex w-[95%] flex-col items-center justify-center gap-2 rounded-[2.5rem] bg-white p-4 md:h-[460px] md:w-[330px] lg:h-[480px] lg:w-[419px]"
           >
             <Lottie animationData={Lottie1} className="w-[95%]" />
 
-            <h1 className="text-[2rem] text-center ps-bulky">Ease of Use</h1>
-            <p className="text-center text-[#727171] text-[1rem] leading-6 ps-slim">
-              Finding help doesn’t have to be complicated. No need to answer
-              pages of questions, and confirm with providers one by one. Just
-              make your wish, tag it, and our genies will come to you.
+            <h1 className="ps-bulky text-center text-[2rem]">Ease of Use</h1>
+            <p className="ps-slim text-center text-[1rem] leading-6 text-[#727171]">
+              Finding help doesn’t have to be complicated. No need to answer pages of questions, and
+              confirm with providers one by one. Just make your wish, tag it, and our genies will
+              come to you.
             </p>
           </motion.div>
 
@@ -431,18 +381,16 @@ const WhatWeOffer = () => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{ duration: 0.3, delay: 0.8, ease: "easeIn" }}
-            className="w-[95%] md:w-[330px] md:h-[460px] lg:w-[419px] lg:h-[480px] rounded-[2.5rem] bg-white  flex items-center justify-center flex-col gap-2 relative p-4"
+            transition={{ duration: 0.3, delay: 0.8, ease: 'easeIn' }}
+            className="relative flex w-[95%] flex-col items-center justify-center gap-2 rounded-[2.5rem] bg-white p-4 md:h-[460px] md:w-[330px] lg:h-[480px] lg:w-[419px]"
           >
             <Lottie animationData={Lottie3} className="w-[95%]" />
 
-            <h1 className="text-[2rem] text-center ps-bulky">
-              Verified & Trusted
-            </h1>
-            <p className="text-center text-[#727171] text-[1rem] leading-6 ps-slim">
-              We prioritize your safety. Servgenie requires providers to pass
-              identity verification and background checks. For additional trust,
-              their ratings, and reviews, can also be found on their profile.
+            <h1 className="ps-bulky text-center text-[2rem]">Verified & Trusted</h1>
+            <p className="ps-slim text-center text-[1rem] leading-6 text-[#727171]">
+              We prioritize your safety. Servgenie requires providers to pass identity verification
+              and background checks. For additional trust, their ratings, and reviews, can also be
+              found on their profile.
             </p>
           </motion.div>
 
@@ -455,17 +403,15 @@ const WhatWeOffer = () => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{ duration: 0.3, delay: 1, ease: "easeIn" }}
-            className="w-[95%] md:w-[330px] md:h-[460px] lg:w-[419px] lg:h-[480px] rounded-[2.5rem] bg-white  flex lg:hidden items-center justify-center flex-col gap-2 relative p-4"
+            transition={{ duration: 0.3, delay: 1, ease: 'easeIn' }}
+            className="relative flex w-[95%] flex-col items-center justify-center gap-2 rounded-[2.5rem] bg-white p-4 md:h-[460px] md:w-[330px] lg:hidden lg:h-[480px] lg:w-[419px]"
           >
             <Lottie animationData={Lottie4} className="w-[95%]" />
 
-            <h1 className="text-[2rem] text-center ps-bulky">
-              Price Negotiation
-            </h1>
-            <p className="text-center text-[#727171] text-[1rem] leading-6 ps-slim">
-              As the Wisher, you get to seal the deal! Wishes receive bids from
-              Genies, allowing you to select or negotiate for the best deal.
+            <h1 className="ps-bulky text-center text-[2rem]">Price Negotiation</h1>
+            <p className="ps-slim text-center text-[1rem] leading-6 text-[#727171]">
+              As the Wisher, you get to seal the deal! Wishes receive bids from Genies, allowing you
+              to select or negotiate for the best deal.
             </p>
           </motion.div>
         </div>
