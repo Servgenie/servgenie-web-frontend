@@ -157,9 +157,9 @@ const GetReady = () => {
           <Link
             className="pl-1 pr-1 text-[#358ede] hover:underline"
             target="_blank"
-            href="../legal/terms-of-service"
+            href="/legal/terms"
           >
-            terms of service
+            terms
           </Link>
           and
           <Link
