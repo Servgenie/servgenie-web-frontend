@@ -7,7 +7,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  
+
     extend: {
       screens: {
         xs: "480px",
@@ -35,6 +35,7 @@ const config: Config = {
         },
       });
     },
+    require('@tailwindcss/forms'),
   ],
 };
 
