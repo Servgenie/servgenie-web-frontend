@@ -1,13 +1,18 @@
 'use client'
 import Link from 'next/link';
 import React from 'react';
-// import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+
+const handleSave = (e: { preventDefault: () => void; }) =>{
+  e.preventDefault()
+  console.log("save button clicked!")
+}
+
 
 export default function Support() {
   return (
-    <form>
+    <form className="max-w-lg mx-auto mt-28 p-8">
       <div className="space-y-12">
-        <div className="border-b border-gray-900/10 pb-12">
+        <div>
           <h2 className="text-base/7 font-semibold text-gray-900">Support</h2>
           <p className="mt-1 text-sm/6 text-gray-600">
           We’re here to support you every step of the way. Just share your email and let us know what’s on your mind—whether it’s a question, a suggestion, or something you need help with. Our team will be in touch soon to make sure you’re taken care of!
@@ -33,6 +38,7 @@ export default function Support() {
               <label htmlFor="comment" className="block text-sm/6 font-medium text-gray-900">
                 Comment
               </label>
+              <p className="mt-3 text-sm/6 text-gray-600">Please share your ideas here.</p>
               <div className="mt-2">
                 <textarea
                   id="comment"
@@ -42,18 +48,20 @@ export default function Support() {
                   defaultValue={''}
                 />
               </div>
-              <p className="mt-3 text-sm/6 text-gray-600">Please share your ideas here.</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm/6 font-semibold text-gray-900">
-          Cancel
+        <button 
+        type="button" 
+        className="text-sm/6 font-semibold text-gray-900">
+          <Link href="/">Cancel</Link>
         </button>
         <button
           type="submit"
+          onClick={handleSave}
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Save
