@@ -1,35 +1,31 @@
 'use client';
 
-import { ArrowUpRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-// import Desktop from './wordAnimations/Desktop';
-// import Tablet from './wordAnimations/Tablet';
-// import Mobile from './wordAnimations/Mobile';
+import Link from 'next/link';
+import toast, { Toaster } from 'react-hot-toast';
+import { ArrowUpRight } from 'lucide-react';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import axios from 'axios';
-import toast, { Toaster } from 'react-hot-toast';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import Link from 'next/link';
 import WordAnimation from './WordAnimations';
 
 const content = {
-mobile:[
-"Unlock your earning potentials",
-"with $ervgenie, and help",
-"Wishers grant their wishes."
-],
-tablet:[
-  "Unlock your earning potentials",
-"with $ervgenie, and help",
-"Wishers grant their wishes."
-],
-desktop:[
-  "Unlock your earning potentials",
-  "with $ervgenie, and help",
-  "Wishers grant their wishes."
-]
+  mobile: [
+    'Unlock your earning potentials',
+    'with $ervgenie, and help',
+    'Wishers grant their wishes.',
+  ],
+  tablet: [
+    'Unlock your earning potentials',
+    'with $ervgenie, and help',
+    'Wishers grant their wishes.',
+  ],
+  desktop: [
+    'Unlock your earning potentials',
+    'with $ervgenie, and help',
+    'Wishers grant their wishes.',
+  ],
 };
-
 
 const GetReady = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -106,11 +102,11 @@ const GetReady = () => {
         alt="wave"
         className="absolute left-0 top-[20%] w-[110%] sm:top-[0%]"
       />
-<div>
-<WordAnimation variant="desktop" content={content} />
-      <WordAnimation variant="tablet" content={content} />
-      <WordAnimation variant="mobile" content={content} />
-</div>
+      <div>
+        <WordAnimation variant="desktop" content={content} />
+        <WordAnimation variant="tablet" content={content} />
+        <WordAnimation variant="mobile" content={content} />
+      </div>
 
       <motion.form
         variants={{
@@ -121,7 +117,7 @@ const GetReady = () => {
         animate={mainControls}
         initial="hidden"
         transition={{ duration: 0.3, delay: 0.6, ease: 'easeIn' }}
-        className={`ps-slim border-[#111928] mt-[1rem] flex h-[56px] w-[95%] items-center justify-between rounded-[2rem] border-2 py-1 pl-4 pr-1 sm:mt-0 md:w-[549px] lg:w-[458px]`}
+        className={`ps-slim mt-[1rem] flex h-[56px] w-[95%] items-center justify-between rounded-[2rem] border-2 border-[#111928] py-1 pl-4 pr-1 sm:mt-0 md:w-[549px] lg:w-[458px]`}
         ref={GetReadyRef}
       >
         <input
@@ -138,7 +134,7 @@ const GetReady = () => {
         />
         <button
           type="submit"
-          className={`ps-slim group pl-2 mr-1 flex h-[40px] w-[97px] cursor-pointer items-center justify-center gap-1 rounded-full bg-[#111928] text-sm text-white`}
+          className={`ps-slim group mr-1 flex h-[40px] w-[97px] cursor-pointer items-center justify-center gap-1 rounded-full bg-[#111928] pl-2 text-sm text-white`}
         >
           {loading ? (
             <div className="flex items-center gap-1">
