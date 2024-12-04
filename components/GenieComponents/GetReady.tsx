@@ -2,14 +2,34 @@
 
 import { ArrowUpRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import Desktop from './wordAnimations/Desktop';
-import Tablet from './wordAnimations/Tablet';
-import Mobile from './wordAnimations/Mobile';
+// import Desktop from './wordAnimations/Desktop';
+// import Tablet from './wordAnimations/Tablet';
+// import Mobile from './wordAnimations/Mobile';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Link from 'next/link';
+import WordAnimation from './WordAnimations';
+
+const content = {
+mobile:[
+"Unlock your earning potentials",
+"with $ervgenie, and help",
+"Wishers grant their wishes."
+],
+tablet:[
+  "Unlock your earning potentials",
+"with $ervgenie, and help",
+"Wishers grant their wishes."
+],
+desktop:[
+  "Unlock your earning potentials",
+  "with $ervgenie, and help",
+  "Wishers grant their wishes."
+]
+};
+
 
 const GetReady = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -86,15 +106,11 @@ const GetReady = () => {
         alt="wave"
         className="absolute left-0 top-[20%] w-[110%] sm:top-[0%]"
       />
-
-      {/* for desktop */}
-      <Desktop />
-
-      {/* for tablet */}
-      <Tablet />
-
-      {/* for mobile */}
-      <Mobile />
+<div>
+<WordAnimation variant="desktop" content={content} />
+      <WordAnimation variant="tablet" content={content} />
+      <WordAnimation variant="mobile" content={content} />
+</div>
 
       <motion.form
         variants={{

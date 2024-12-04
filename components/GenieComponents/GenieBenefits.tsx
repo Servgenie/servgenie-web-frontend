@@ -4,12 +4,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useAnimation, useInView, motion } from 'framer-motion'
-import Lottie1 from '@/app/lottie/genie-benifits/1.json'
-import Lottie2 from '@/app/lottie/genie-benifits/2.json'
-import Lottie3 from '@/app/lottie/genie-benifits/3.json'
-import Lottie4 from '@/app/lottie/genie-benifits/4.json'
+
 import Lottie from 'lottie-react'
 import useWindowSize from '@/hooks/use-window'
+import { Lottie1, Lottie2, Lottie3, Lottie4, LottieGenie1, LottieGenie2, LottieGenie3, LottieGenie4 } from '../../assets/lotties'
+import { images } from '@/constants/assets'
+import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,11 +156,11 @@ const GenieBenefits = () => {
                                     {
                                         (visitedIndex === 1) ?
                                             (
-                                                <img src="/assets/genie/benefits/whiteStar.svg" alt="white star" />
+                                                <Image src={images.whiteStar.src} width={images.whiteStar.width} height={images.whiteStar.height} alt={images.whiteStar.alt} />
                                             )
                                             :
                                             (
-                                                <img src="/assets/genie/benefits/grayStar.svg" alt="white star" />
+                                                <Image src={images.grayStar.src} width={images.grayStar.width} height={images.grayStar.height} alt={images.grayStar.alt} />
                                             )
                                     }
 
@@ -178,11 +178,11 @@ const GenieBenefits = () => {
                                     {
                                         (visitedIndex === 2) ?
                                             (
-                                                <img src="/assets/genie/benefits/whiteBag.svg" alt="white star" />
+                                                <Image width={images.whiteBag.width} height={images.whiteBag.height} src={images.whiteBag.src} alt={images.whiteBag.alt} />
                                             )
                                             :
                                             (
-                                                <img src="/assets/genie/benefits/grayBag.svg" alt="white star" />
+                                                <Image width={images.grayBag.width} height={images.grayBag.height} src={images.grayBag.src} alt={images.grayBag.alt} />
                                             )
                                     }
 
@@ -201,11 +201,11 @@ const GenieBenefits = () => {
                                     {
                                         (visitedIndex === 3) ?
                                             (
-                                                <img src="/assets/genie/benefits/whiteFlag.svg" alt="white star" />
+                                                <Image width={images.whiteFlag.width} height={images.whiteFlag.height} src={images.whiteFlag.src} alt={images.whiteFlag.alt} />
                                             )
                                             :
                                             (
-                                                <img src="/assets/genie/benefits/grayFlag.svg" alt="white star" />
+                                                <Image width={images.grayFlag.width} height={images.grayFlag.height} src={images.grayFlag.src} alt={images.grayFlag.alt} />
                                             )
                                     }
 
@@ -223,11 +223,11 @@ const GenieBenefits = () => {
                                     {
                                         (visitedIndex === 4) ?
                                             (
-                                                <img src="/assets/genie/benefits/whiteBulb.svg" alt="white star" />
+                                                <Image width={images.whiteBulb.width} height={images.whiteBulb.height} src={images.whiteBulb.src} alt={images.whiteBulb.alt} />
                                             )
                                             :
                                             (
-                                                <img src="/assets/genie/benefits/grayBulb.svg" alt="white star" />
+                                                <Image width={images.grayBulb.width} height={images.grayBulb.height} src={images.grayBulb.src} alt={images.grayBulb.alt} />
                                             )
                                     }
 
@@ -243,7 +243,7 @@ const GenieBenefits = () => {
                                 <p>Be a Jack of All Trades </p>
                                 {
                                     (arrowIndex === 1) && (
-                                        <img src="/assets/genie/benefits/arrow.svg" alt="arrow" className='ml-4' />
+                                        <Image width={images.arrow.width} height={images.arrow.height} src={images.arrow.src} alt={images.arrow.alt} className='ml-4' />
                                     )
                                 }
                             </div>
@@ -252,7 +252,7 @@ const GenieBenefits = () => {
                                 <p>Work Close, Earn Fast </p>
                                 {
                                     (arrowIndex === 2) && (
-                                        <img src="/assets/genie/benefits/arrow.svg" alt="arrow" className='ml-4' />
+                                        <Image width={images.arrow.width} height={images.arrow.height} src={images.arrow.src} alt={images.arrow.alt} className='ml-4' />
                                     )
                                 }
                             </div>
@@ -261,7 +261,7 @@ const GenieBenefits = () => {
                                 <p>Set Your Own Rates </p>
                                 {
                                     (arrowIndex === 3) && (
-                                        <img src="/assets/genie/benefits/arrow.svg" alt="arrow" className='ml-4' />
+                                        <Image width={images.arrow.width} height={images.arrow.height} src={images.arrow.src} alt={images.arrow.alt} className='ml-4' />
                                     )
                                 }
                             </div>
@@ -270,7 +270,7 @@ const GenieBenefits = () => {
                                 <p>Work on Your Terms</p>
                                 {
                                     (arrowIndex === 4) && (
-                                        <img src="/assets/genie/benefits/arrow.svg" alt="arrow" className='ml-4' />
+                                        <Image width={images.arrow.width} height={images.arrow.height} src={images.arrow.src} alt={images.arrow.alt} className='ml-4' />
                                     )
                                 }
                             </div>
@@ -287,7 +287,7 @@ const GenieBenefits = () => {
                     <div className="flex-1 flex items-center justify-start gap-8  flex-col overflow-hidden">
                         <div className='w-[638px] min-h-[512px]  rounded-[48px] bg-white py-4 px-4 flex justify-center items-center flex-col rightDiv-1 '>
                             <Lottie
-                                animationData={Lottie1}
+                                animationData={LottieGenie1}
                                 className=''
                                 loop={true}
                                 autoPlay={true}
@@ -298,7 +298,7 @@ const GenieBenefits = () => {
 
                         <div className='w-[638px] sm:min-h-[512px] overflow-hidden  rounded-[48px] bg-white py-4 px-4 gap-4 flex justify-center items-center flex-col rightDiv-2'>
                             <Lottie
-                                animationData={Lottie2}
+                                animationData={LottieGenie2}
                                 className=' '
                                 loop={true}
                                 autoPlay={true}
@@ -310,7 +310,7 @@ const GenieBenefits = () => {
 
                         <div className='w-[638px] min-h-[512px]  rounded-[48px] bg-white py-4 px-4 flex justify-center items-center flex-col rightDiv-3'>
                             <Lottie
-                                animationData={Lottie3}
+                                animationData={LottieGenie3}
                                 className='h-full'
                                 loop={true}
                                 autoPlay={true}
@@ -322,7 +322,7 @@ const GenieBenefits = () => {
 
                         <div className='w-[638px] min-h-[512px]  rounded-[48px] bg-white py-4 px-4 flex justify-center items-center flex-col rightDiv-4 gap-6'>
                             <Lottie
-                                animationData={Lottie4}
+                                animationData={LottieGenie4}
                                 className=''
                                 loop={true}
                                 autoPlay={true}

@@ -2,13 +2,10 @@
 
 import Lottie from 'lottie-react';
 import React, { useEffect, useRef, useState } from 'react';
-import Lottie1 from '@/app/lottie/genie/1.json';
-import Lottie2 from '@/app/lottie/genie/2.json';
-import Lottie3 from '@/app/lottie/genie/3.json';
-import Lottie4 from '@/app/lottie/genie/4.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useAnimation, useInView, motion } from 'framer-motion';
+import { Lottie1, Lottie2, Lottie3, Lottie4 } from '@/assets/lotties';
 
 const WhatWeOffer = () => {
   const [activeOffer, setActiveOffer] = useState(1);
