@@ -18,9 +18,24 @@ const genieMenuItems = [
 ];
 
 const getReadyContent = {
-  mobile: ['Get Ready for', '$ervgenie Service', 'Magic is Just Around', 'the Corner!'],
-  tablet: ['Get Ready for $ervgenie', 'Service Magic is Just Around', 'the Corner!'],
-  desktop: ['Get Ready for $ervgenie', 'Service Magic is Just Around', 'the Corner!'],
+  mobile: [
+    "Unlock your earning",
+    "potentials with",
+    "$ervgenie, and help",
+    "Wishers grant their",
+    "wishes."
+  ],
+  tablet: [
+    "Unlock your earning",
+    "potentials with $ervgenie,",
+    "and help Wishers grant",
+    "their wishes."
+  ],
+  desktop: [
+    "Unlock your earning potentials",
+    "with $ervgenie, and help",
+    "Wishers grant their wishes."
+  ],
 };
 
 const Page = () => {

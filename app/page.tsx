@@ -26,25 +26,11 @@ const footerMenuItems = [
 ];
 
 const getReadyContent = {
-  mobile: [
-    "Unlock your earning",
-    "potentials with",
-    "$ervgenie, and help",
-    "Wishers grant their",
-    "wishes."
-  ],
-  tablet: [
-    "Unlock your earning",
-    "potentials with $ervgenie,",
-    "and help Wishers grant",
-    "their wishes."
-  ],
-  desktop: [
-    "Unlock your earning potentials",
-    "with $ervgenie, and help",
-    "Wishers grant their wishes."
-  ],
+  mobile: ['Get Ready for', '$ervgenie Service', 'Magic is Just Around', 'the Corner!'],
+  tablet: ['Get Ready for $ervgenie', 'Service Magic is Just Around', 'the Corner!'],
+  desktop: ['Get Ready for $ervgenie', 'Service Magic is Just Around', 'the Corner!'],
 };
+
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
