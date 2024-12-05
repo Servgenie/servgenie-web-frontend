@@ -25,8 +25,7 @@ const GenieHero = () => {
         <div className='max-w-[90rem]   md:max-h-[90vh] md:pb-20 xs:pb-[40vh] pb-[30vh] lg:max-h-[110vh] py-20  mx-auto rounded-[24px] sm:rounded-[3rem] mt-3  relative  bg-[url("/assets/genie/hero/bg.png")] bg-center bg-cover ' id='home'
             ref={heroRef}
         >
-            {/* wave container */}
-
+           
             <div className='w-full h-full absolute -top-[13%] left-0 flex items-center justify-center overflow-hidden '>
                 <svg min-width="1476" height="496" viewBox="0 0 1376 396" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="glow-a" opacity="0.05" d="M0 364C123.5 364 259.5 94 716.5 204.5C1233.2 329.436 1252.5 32.5 1376 32.5" stroke="url(#paint0_linear_545_370)" strokeWidth="64" />
@@ -38,22 +37,9 @@ const GenieHero = () => {
                     </defs>
                 </svg>
             </div>
-
-            {/* text container */}
-
+           
             <div className='w-full h-[90%] flex items-center justify-center flex-col gap-8  '>
-                {/*   <motion.div
-                    variants={{
-                        hidden: { opacity: 0, },
-                        visible: { opacity: 1, },
-                    }}
-                    initial="hidden"
-                    animate={mainControls}
-                    transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
-                    className='ps-slim leading-[20px] text-[20px] border-2 border-[#8F52FF] rounded-full px-4 py-2 bg-white '>
-                    Become a servgenie
-                </motion.div>
- */}
+               
                 <motion.div
                     variants={{
                         hidden: { opacity: 0, },
@@ -92,9 +78,6 @@ const GenieHero = () => {
                 </motion.div>
             </div>
 
-            {/* img container */}
-
-            {/* desktop and tablet */}
             <motion.div
                 variants={{
                     hidden: { opacity: 0, y: 50 },
@@ -129,8 +112,7 @@ const GenieHero = () => {
 
             </motion.div>
 
-            {/* mobile */}
-
+          
             <motion.div
                 variants={{
                     hidden: { opacity: 0, y: 50 },
