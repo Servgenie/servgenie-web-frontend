@@ -1,9 +1,9 @@
 "use client"
 
+import React, { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import JoinNowButton from '@/components/common/JoinNowButton'
 import { useAnimation, useInView, motion } from 'framer-motion'
-import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
 
 
 const GenieHero = () => {
