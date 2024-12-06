@@ -5,8 +5,6 @@ import Image from "next/image";
 import Logo from "./Logo";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { X } from "lucide-react";
-// import JoinNowButton from './JoinNowButton';
-// import BeAGenie from './BeAGenie';
 import { scrollToSection } from "@/utils/navgiation";
 import { images } from "@/constants/assets";
 import Button from "./Button";

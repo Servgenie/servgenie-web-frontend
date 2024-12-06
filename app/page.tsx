@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Footer from "@/components/common/Footer";
-// import Navbar from "@/components/common/Navbar";
 
 import WhatIsServgenie from "@/components/section/Home/WhatIsServgenie";
 import Hero from '@/components/section/Home/HomeHero';

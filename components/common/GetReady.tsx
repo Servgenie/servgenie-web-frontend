@@ -8,7 +8,6 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Link from "next/link";
 import WordAnimation from "../GenieComponents/WordAnimations";
 import Image from "next/image";
-// import SubmitBtn from "./SubmitButton";
 import Button from "./Button";
 
 interface GetReadyProps {
