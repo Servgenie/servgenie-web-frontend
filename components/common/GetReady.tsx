@@ -8,7 +8,8 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Link from "next/link";
 import WordAnimation from "../GenieComponents/WordAnimations";
 import Image from "next/image";
-import SubmitBtn from "./SubmitButton";
+// import SubmitBtn from "./SubmitButton";
+import Button from "./Button";
 
 interface GetReadyProps {
   content: {
@@ -137,7 +138,13 @@ const GetReady: React.FC<GetReadyProps> = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <SubmitBtn loading={loading} />
+      <Button 
+  text="Submit" 
+  variant="solid" 
+  loading={loading} 
+  type="submit"
+/>
+        {/* <SubmitBtn loading={loading} /> */}
       </motion.form>
 
       <motion.div

@@ -1,9 +1,10 @@
 "use client"
 
-import JoinNowButton from '@/components/common/JoinNowButton'
 import { useAnimation, useInView, motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
+import Button from '../common/Button'
+import { scrollToSection } from '@/utils/navgiation'
 
 
 const GenieHero = () => {
@@ -88,7 +89,12 @@ const GenieHero = () => {
                     transition={{ duration: 0.3, delay: 0.8, ease: "easeIn" }}
                     className='z-50'
                 >
-                    <JoinNowButton />
+                    <Button 
+                    text="Join Now" 
+                    variant="gradient" 
+                    onClick={() => scrollToSection("join")} 
+                    />
+                    {/* <JoinNowButton /> */}
                 </motion.div>
             </div>
 
