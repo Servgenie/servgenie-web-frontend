@@ -12,38 +12,83 @@ interface WordAnimationProps {
 
 const WordAnimation: React.FC<WordAnimationProps> = ({ variant, content }) => {
   const animationRef = useRef<HTMLDivElement>(null);
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const spans = gsap.utils.toArray(`.${variant}TextSpan`);
-      gsap.fromTo(
-        spans,
-        { color: "#11192866" },
-        {
-          color: "#000000",
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: animationRef.current,
-            start:
-              variant === 'desktop'
-                ? "top+=200 bottom"
-                : variant === 'tablet'
-                ? "top-=1000 top"
-                : "top-=350 top",
-            end:
-              variant === 'desktop'
-                ? "top top"
-                : variant === 'tablet'
-                ? "top-=700 top"
-                : "top-=150 top",
-            scrub: true,
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Add initial state setup
+    if (animationRef.current) {
+      const spans = animationRef.current.querySelectorAll(`.${variant}TextSpan`);
+      spans.forEach(span => {
+        gsap.set(span, { color: "#11192866" });
+      });
+    }
+    
+    // Wait for DOM and viewport to be fully ready
+    const initAnimation = () => {
+      const ctx = gsap.context(() => {
+        const spans = gsap.utils.toArray(`.${variant}TextSpan`);
+        
+        // Different configuration based on variant
+        const config = {
+          desktop: {
+            start: "top center+=100",
+            end: "bottom center-=100",
           },
-        }
-      );
-    }, animationRef);
+          tablet: {
+            start: "top 60%", 
+            end: "bottom 40%",
+          },
+          mobile: {
+            start: "top 70%", 
+            end: "bottom 30%",
+          }
+        };
 
-    return () => ctx.revert();
+        gsap.fromTo(
+          spans,
+          { 
+            color: "#11192866",
+          },
+          {
+            color: "#000000",
+            stagger: variant === 'mobile' ? 0.03 : 0.05,
+            scrollTrigger: {
+              trigger: animationRef.current,
+              start: config[variant].start,
+              end: config[variant].end,
+              scrub: true,
+              invalidateOnRefresh: true,
+              once: false,
+            },
+          }
+        );
+      }, animationRef);
+
+      return ctx;
+    };
+
+    // Add proper delay for initialization
+    let ctx: gsap.Context;
+    const timer = setTimeout(() => {
+      ctx = initAnimation();
+      ScrollTrigger.refresh();
+    }, 1500); // Increased delay to ensure proper page load
+
+    // Add resize handler for mobile/tablet
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh(true);
+    });
+
+    if (variant !== 'desktop') {
+      resizeObserver.observe(document.body);
+    }
+
+    return () => {
+      clearTimeout(timer);
+      ctx?.revert();
+      resizeObserver.disconnect();
+    };
   }, [variant]);
 
   // Define the text size and leading classes based on the variant
