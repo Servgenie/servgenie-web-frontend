@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 interface WordAnimationProps {
-  variant: 'desktop' | 'tablet' | 'mobile';
+  variant: "desktop" | "tablet" | "mobile";
   content: { mobile: string[]; desktop: string[]; tablet: string[] };
 }
 
@@ -15,44 +15,44 @@ const WordAnimation: React.FC<WordAnimationProps> = ({ variant, content }) => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // Add initial state setup
     if (animationRef.current) {
-      const spans = animationRef.current.querySelectorAll(`.${variant}TextSpan`);
-      spans.forEach(span => {
+      const spans = animationRef.current.querySelectorAll(
+        `.${variant}TextSpan`
+      );
+      spans.forEach((span) => {
         gsap.set(span, { color: "#11192866" });
       });
     }
-    
-    // Wait for DOM and viewport to be fully ready
+
     const initAnimation = () => {
       const ctx = gsap.context(() => {
         const spans = gsap.utils.toArray(`.${variant}TextSpan`);
-        
-        // Different configuration based on variant
+
         const config = {
           desktop: {
             start: "top center+=100",
             end: "bottom center-=100",
           },
           tablet: {
-            start: "top 60%", 
+            start: "top 60%",
             end: "bottom 40%",
           },
           mobile: {
-            start: "top 70%", 
+            start: "top 70%",
             end: "bottom 30%",
-          }
+          },
         };
 
         gsap.fromTo(
           spans,
-          { 
+          {
             color: "#11192866",
           },
           {
             color: "#000000",
-            stagger: variant === 'mobile' ? 0.03 : 0.05,
+            stagger: variant === "mobile" ? 0.03 : 0.05,
             scrollTrigger: {
               trigger: animationRef.current,
               start: config[variant].start,
@@ -68,19 +68,17 @@ const WordAnimation: React.FC<WordAnimationProps> = ({ variant, content }) => {
       return ctx;
     };
 
-    // Add proper delay for initialization
     let ctx: gsap.Context;
     const timer = setTimeout(() => {
       ctx = initAnimation();
       ScrollTrigger.refresh();
-    }, 1500); // Increased delay to ensure proper page load
+    }, 1500);
 
-    // Add resize handler for mobile/tablet
     const resizeObserver = new ResizeObserver(() => {
       ScrollTrigger.refresh(true);
     });
 
-    if (variant !== 'desktop') {
+    if (variant !== "desktop") {
       resizeObserver.observe(document.body);
     }
 
@@ -91,21 +89,19 @@ const WordAnimation: React.FC<WordAnimationProps> = ({ variant, content }) => {
     };
   }, [variant]);
 
-  // Define the text size and leading classes based on the variant
   const textSizeClasses =
-    variant === 'desktop'
-      ? 'text-[72px] leading-[86px]'
-      : variant === 'tablet'
-      ? 'text-[56px] leading-[67px]'
-      : 'text-[30px] leading-[41px]';
+    variant === "desktop"
+      ? "text-[72px] leading-[86px]"
+      : variant === "tablet"
+      ? "text-[56px] leading-[67px]"
+      : "text-[30px] leading-[41px]";
 
-  // Define visibility classes based on the variant
   const visibilityClasses =
-    variant === 'desktop'
-      ? 'hidden lg:flex'
-      : variant === 'tablet'
-      ? 'hidden md:flex lg:hidden'
-      : 'flex md:hidden';
+    variant === "desktop"
+      ? "hidden lg:flex"
+      : variant === "tablet"
+      ? "hidden md:flex lg:hidden"
+      : "flex md:hidden";
 
   return (
     <div
@@ -114,31 +110,31 @@ const WordAnimation: React.FC<WordAnimationProps> = ({ variant, content }) => {
     >
       {content[variant].map((line, index) => (
         <div key={index} className="flex text-center">
-          {line.split('').map((char, idx) =>
-            char === ' '
-              ? (
-                <span key={idx} className={`${variant}TextSpan`}>&nbsp;</span>
-              )
-              : char === '$'
-              ? (
-                <Image
+          {line.split("").map((char, idx) =>
+            char === " " ? (
+              <span key={idx} className={`${variant}TextSpan`}>
+                &nbsp;
+              </span>
+            ) : char === "$" ? (
+              <Image
                 width={56}
                 height={90}
-                  key={idx}
-                  src="/assets/logo.svg"
-                  alt="logo"
-                  className={
-                    variant === 'mobile'
-                      ? 'w-[25px] mt-1 mx-1'
-                      : variant === 'tablet'
-                      ? 'w-[40px] mt-1 mx-1'
-                      : 'w-[55px] mt-1 mx-1'
-                  }
-                />
-              )
-              : (
-                <span key={idx} className={`${variant}TextSpan`}>{char}</span>
-              )
+                key={idx}
+                src="/assets/logo.svg"
+                alt="logo"
+                className={
+                  variant === "mobile"
+                    ? "w-[25px] mt-1 mx-1"
+                    : variant === "tablet"
+                    ? "w-[40px] mt-1 mx-1"
+                    : "w-[55px] mt-1 mx-1"
+                }
+              />
+            ) : (
+              <span key={idx} className={`${variant}TextSpan`}>
+                {char}
+              </span>
+            )
           )}
         </div>
       ))}
