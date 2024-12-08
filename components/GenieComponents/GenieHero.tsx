@@ -1,11 +1,13 @@
 "use client"
 
-import JoinNowButton from '@/components/common/JoinNowButton'
 import { useAnimation, useInView, motion } from 'framer-motion'
+import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
+import Button from '../common/Button'
+import { scrollToSection } from '@/utils/navgiation'
 
 
-const Hero = () => {
+const GenieHero = () => {
 
     const heroRef = useRef(null)
     const mainControls = useAnimation()
@@ -87,7 +89,12 @@ const Hero = () => {
                     transition={{ duration: 0.3, delay: 0.8, ease: "easeIn" }}
                     className='z-50'
                 >
-                    <JoinNowButton />
+                    <Button 
+                    text="Join Now" 
+                    variant="gradient" 
+                    onClick={() => scrollToSection("join")} 
+                    />
+                    {/* <JoinNowButton /> */}
                 </motion.div>
             </div>
 
@@ -105,25 +112,25 @@ const Hero = () => {
                 className='w-full max-h-screen  hidden sm:flex items-center justify-center gap-3 lg:gap-8 mt-[-5rem]'>
 
                 <div className='flex flex-col gap-4'>
-                    <img src="/assets/genie/hero/1.png" className='md:h-auto h-64 w-auto' alt="hero image" />
-                    <img src="/assets/genie/hero/2.png" className='md:h-auto h-32 w-auto' alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/1.png" className='md:h-auto h-64 w-auto' alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/2.png" className='md:h-auto h-32 w-auto' alt="hero image" />
                 </div>
 
                 <div className='mt-16 md:block  hidden'>
-                    <img src="/assets/genie/hero/3.png" alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/3.png" alt="hero image" />
                 </div>
 
                 <div className='mt-[14rem]'>
-                    <img src="/assets/genie/hero/4.png" className='md:h-auto h-64' alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/4.png" className='md:h-auto h-64' alt="hero image" />
                 </div>
 
                 <div className='mt-16  md:block hidden'>
-                    <img src="/assets/genie/hero/5.png" alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/5.png" alt="hero image" />
                 </div>
 
                 <div className='flex flex-col gap-4'>
-                    <img src="/assets/genie/hero/6.png" className='md:h-auto h-64 w-auto' alt="hero image" />
-                    <img src="/assets/genie/hero/7.png" className='md:h-auto h-32 w-auto' alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/6.png" className='md:h-auto h-64 w-auto' alt="hero image" />
+                    <Image height={295} width={243} src="/assets/genie/hero/7.png" className='md:h-auto h-32 w-auto' alt="hero image" />
                 </div>
 
             </motion.div>
@@ -139,7 +146,7 @@ const Hero = () => {
                 animate={mainControls}
                 transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
                 className='max-h-screen flex  w-full absolute  sm:hidden items-center justify-center md:gap-3 lg:gap-8 mt-[0rem] mx-auto'>
-                <img src="/assets/genie/hero/mobile-pg.svg" alt="mobile hero" className=' w-full' />
+                <Image height={295} width={243} src="/assets/genie/hero/mobile-pg.svg" alt="mobile hero" className=' w-full' />
             </motion.div>
 
         </div>
@@ -148,4 +155,4 @@ const Hero = () => {
 
 
 
-export default Hero
+export default GenieHero

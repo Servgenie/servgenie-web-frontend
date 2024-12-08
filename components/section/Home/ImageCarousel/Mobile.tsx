@@ -7,6 +7,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css/core";
 import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import Image from "next/image";
 
 const answers = [
   "/assets/hero/mobile/answer/1.svg",
@@ -80,10 +81,10 @@ const Mobile: React.FC = () => {
             <div className="card-container">
               <div className="card">
                 <div className="card-face card-front">
-                  <img src={src} alt="Front image" />
+                  <Image width={184} height={272} src={src} alt="Front image" />
                 </div>
                 <div className="card-face card-back">
-                  <img src={answers[index]} alt="Back image" />
+                  <Image width={184} height={272} src={answers[index]} alt="Back image" />
                 </div>
               </div>
             </div>

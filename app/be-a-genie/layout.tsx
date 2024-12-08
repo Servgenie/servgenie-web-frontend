@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { ReactLenis } from '@/utils/lenis';
-import Navbar from "@/components/GenieComponents/Navbar";
 
 export const metadata: Metadata = {
     title: "Servgenie",
@@ -14,7 +12,6 @@ export default function Layout({
 }>) {
     return (
         <>
-            <Navbar />
             {children}
         </>
     );

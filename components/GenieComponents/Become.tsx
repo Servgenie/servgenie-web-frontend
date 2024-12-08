@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import hover3d from '@/utils/hover';
+import Image from 'next/image';
 
 const Become = () => {
   const becomeAgenie = useRef(null);
@@ -51,13 +52,15 @@ const Become = () => {
         transition={{ duration: 0.3, delay: 0.2, ease: 'easeIn' }}
         className="relative ml-10 hidden flex-1 items-center justify-center lg:flex"
       >
-        <img
+        <Image
           src="/assets/genie/become/main.svg"
           alt="main image"
           style={{
             transform: hoverBecomeImg.transform,
           }}
           className="cursor-pointer"
+          width={650}
+          height={641}
         />
       </motion.div>
 
@@ -73,11 +76,13 @@ const Become = () => {
         transition={{ duration: 0.3, delay: 0.2, ease: 'easeIn' }}
         className="relative flex flex-1 items-center justify-center lg:hidden"
       >
-        <img
+        <Image
           src="/assets/genie/become/main.svg"
           alt="main image"
           style={{}}
           className="cursor-pointer"
+          width={650}
+          height={641}
         />
       </motion.div>
 
