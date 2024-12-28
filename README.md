@@ -8,12 +8,23 @@ Visit our live website at https://servgenie.co
 
 This project is created with TypeScript, Next.js App Router with Client Components, and React. Before you begin, make sure you have the following installed:
 
-Node.js v14.x or later
-npm v6.14.4 or later
+Node verion 22 or later
+NPM version 11 or later
 
 If you are new to these technologies, we recommend you go through the official React, Next.js, and TypeScript tutorials first.
 
 ## Getting Started
+
+### Install Node
+Install Node Version Manager (NVM)
+NVM allows you to manage and switch between Node.js versions seamlessly.
+
+1. Follow the official installation guide for your operating system:  
+   [NVM Installation Guide](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Verify the installation by running:  
+   ```bash
+   nvm --version
+3. Install `vsc-nvm` plugin in VS Code to auto switch to the required Node version specified in `.nvmrc`
 
 ### Dev Env Setup
 Create a `.env` file.
