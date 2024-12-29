@@ -12,7 +12,7 @@ interface UseScrollAnimationOptions {
   scrub?: boolean | number;
   pin?: boolean | string | Element;
   pinSpacing?: boolean | string;
-  onUpdate?: (self: ScrollTrigger) => void;
+  onUpdate?: () => void;
   disabled?: boolean;
   [key: string]: any;
 }
@@ -20,7 +20,7 @@ interface UseScrollAnimationOptions {
 export const useScrollAnimation = (
   triggerRef: React.RefObject<HTMLElement>,
   options: UseScrollAnimationOptions,
-  deps: any[] = []
+  deps: any[] = [],
 ) => {
   useEffect(() => {
     if (!triggerRef.current) return;
@@ -34,5 +34,5 @@ export const useScrollAnimation = (
     return () => {
       scrollTrigger.kill();
     };
-  }, [triggerRef, options.disabled, ...deps]);
+  }, [triggerRef, options, ...deps]);
 };

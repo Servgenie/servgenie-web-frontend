@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import ReactLenis from "lenis/react";
-import { PropsWithChildren, useEffect, useState } from "react";
+import ReactLenis from 'lenis/react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 
 function SmoothScrolling({ children }: PropsWithChildren) {
   const [isSafari, setIsSafari] = useState(false);
@@ -18,7 +18,7 @@ function SmoothScrolling({ children }: PropsWithChildren) {
       options={{
         lerp: isSafari ? 0.01 : 0.08,
         duration: 1.5,
-        smoothWheel: true
+        smoothWheel: true,
       }}
     >
       {children}

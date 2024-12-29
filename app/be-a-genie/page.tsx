@@ -19,22 +19,22 @@ const genieMenuItems = [
 
 const getReadyContent = {
   mobile: [
-    "Unlock your earning",
-    "potentials with",
-    "$ervgenie, and help",
-    "Wishers grant their",
-    "wishes."
+    'Unlock your earning',
+    'potentials with',
+    '$ervgenie, and help',
+    'Wishers grant their',
+    'wishes.',
   ],
   tablet: [
-    "Unlock your earning",
-    "potentials with $ervgenie,",
-    "and help Wishers grant",
-    "their wishes."
+    'Unlock your earning',
+    'potentials with $ervgenie,',
+    'and help Wishers grant',
+    'their wishes.',
   ],
   desktop: [
-    "Unlock your earning potentials",
-    "with $ervgenie, and help",
-    "Wishers grant their wishes."
+    'Unlock your earning potentials',
+    'with $ervgenie, and help',
+    'Wishers grant their wishes.',
   ],
 };
 

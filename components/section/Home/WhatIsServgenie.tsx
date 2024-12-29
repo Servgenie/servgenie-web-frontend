@@ -21,8 +21,8 @@ const WhatIsServgenie = () => {
     <div className="mx-auto mt-[10vh] max-w-[95rem] lg:mt-64" id="about" ref={whatIsServgenieRef}>
       <div className="servgenieDiv relative flex w-full flex-col-reverse overflow-hidden lg:flex-row lg:pl-10">
         <Image
-        width={565}
-        height={553}
+          width={565}
+          height={553}
           src="/assets/wave2.png"
           alt="wave"
           className="wave absolute right-0 top-[30%] hidden w-[110%] sm:block lg:top-0"
@@ -69,8 +69,8 @@ const WhatIsServgenie = () => {
         >
           {/* desktop */}
           <Image
-          width={565}
-          height={553}
+            width={565}
+            height={553}
             src="/assets/whatServgenie/main.png"
             alt="whatServgenie"
             className="hidden sm:block"

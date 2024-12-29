@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useAnimation, useInView, motion } from 'framer-motion';
-import hover3d from '@/utils/hover';
+import useHover3d from '@/hooks/use-hover-3d';
 import Image from 'next/image';
 
 const Become = () => {
@@ -12,7 +12,7 @@ const Become = () => {
   const isInView = useInView(becomeAgenie, { once: false });
   const [isLargerDisplay, setLargerDisplay] = useState(false);
 
-  const hoverBecomeImg = hover3d(hoverBecomeImgRef, {
+  const hoverBecomeImg = useHover3d(hoverBecomeImgRef, {
     x: 30,
     y: -40,
     z: 30,

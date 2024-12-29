@@ -16,17 +16,20 @@ If you are new to these technologies, we recommend you go through the official R
 ## Getting Started
 
 ### Install Node
+
 Install Node Version Manager (NVM)
 NVM allows you to manage and switch between Node.js versions seamlessly.
 
 1. Follow the official installation guide for your operating system:  
    [NVM Installation Guide](https://github.com/nvm-sh/nvm#installing-and-updating)
-2. Verify the installation by running:  
+2. Verify the installation by running:
    ```bash
    nvm --version
+   ```
 3. Install `vsc-nvm` plugin in VS Code to auto switch to the required Node version specified in `.nvmrc`
 
 ### Dev Env Setup
+
 Create a `.env` file.
 Refer to `.env.example` for the required keys.
 Use the env values from Amplify QA environment.
@@ -61,12 +64,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Known Issues
 
 1. Git error: RPC failed with HTTP 400
-`error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400`
-If you get the RPC failed error above, this is due to pushing large assets. Simply run `git config http.postBuffer 524288000`
+   `error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400`
+   If you get the RPC failed error above, this is due to pushing large assets. Simply run `git config http.postBuffer 524288000`
 
 ## Join Us
 
 Be a part of an innovative journey, and shape the future of Servgenie!
+
 - [Instagram](https://www.instagram.com/servgenie)
 - [LinkedIn](https://www.linkedin.com/company/servgenie)
 - [Facebook](https://www.facebook.com/servgenie.co)

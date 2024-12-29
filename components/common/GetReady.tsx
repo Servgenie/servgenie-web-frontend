@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import { useAnimation, useInView, motion } from "framer-motion";
-import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import Link from "next/link";
-import WordAnimation from "../GenieComponents/WordAnimations";
-import Image from "next/image";
-import Button from "./Button";
+import React, { useEffect, useRef, useState } from 'react';
+import { useAnimation, useInView, motion } from 'framer-motion';
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import Link from 'next/link';
+import WordAnimation from '../GenieComponents/WordAnimations';
+import Image from 'next/image';
+import Button from './Button';
 
 interface GetReadyProps {
   content: {
@@ -29,7 +29,7 @@ const GetReady: React.FC<GetReadyProps> = ({
 }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
 
   const getReadyRef = useRef(null);
@@ -39,19 +39,16 @@ const GetReady: React.FC<GetReadyProps> = ({
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const token =
-      executeRecaptcha && (await executeRecaptcha("newsletter_subscribe"));
+    const token = executeRecaptcha && (await executeRecaptcha('newsletter_subscribe'));
     if (!token) {
-      toast.error(
-        "We've detected a bot-like behavior. Please try again later."
-      );
+      toast.error("We've detected a bot-like behavior. Please try again later.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email.length === 0 || !emailRegex.test(email)) {
-      toast.error("Please enter a valid email address!");
+      toast.error('Please enter a valid email address!');
       return;
     }
 
@@ -59,26 +56,26 @@ const GetReady: React.FC<GetReadyProps> = ({
 
     try {
       const response = await axios.post(
-        "/api/subscribe",
+        '/api/subscribe',
         {
           email,
           attributes: {
-            IS_PROVIDER: isProvider ? "Yes" : "No",
+            IS_PROVIDER: isProvider ? 'Yes' : 'No',
             OPT_IN: true,
           },
         },
         {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
-        }
+        },
       );
       if (response.status === 200) {
         toast.success("You've been subscribed!");
-        setEmail("");
+        setEmail('');
       }
-    } catch (error: any) {
-      toast.error("An error occurred. Please try again!");
+    } catch {
+      toast.error('An error occurred. Please try again!');
     } finally {
       setLoading(false);
     }
@@ -86,9 +83,9 @@ const GetReady: React.FC<GetReadyProps> = ({
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("visible");
+      mainControls.start('visible');
     } else {
-      mainControls.start("hidden");
+      mainControls.start('hidden');
     }
   }, [isInView, mainControls]);
 
@@ -97,11 +94,7 @@ const GetReady: React.FC<GetReadyProps> = ({
       className="relative mt-[4rem] flex min-h-[55vh] w-full flex-col items-center justify-center gap-8 sm:mt-0 md:mt-20 md:min-h-[50vh] lg:h-screen"
       id="join"
     >
-      <Toaster
-        position="top-right"
-        toastOptions={{ duration: 5000 }}
-        reverseOrder={false}
-      />
+      <Toaster position="top-right" toastOptions={{ duration: 5000 }} reverseOrder={false} />
       <Image
         src={backgroundImage}
         alt={waveImageAlt}
@@ -124,8 +117,8 @@ const GetReady: React.FC<GetReadyProps> = ({
         initial="hidden"
         animate={mainControls}
         onSubmit={handleSubscribe}
-        transition={{ duration: 0.3, delay: 0.6, ease: "easeIn" }}
-        className="ps-slim border-[#111928] mt-[1rem] flex h-[56px] w-[95%] items-center justify-between rounded-[2rem] border-2 py-1 pl-4 pr-1 sm:mt-0 md:w-[549px] lg:w-[458px]"
+        transition={{ duration: 0.3, delay: 0.6, ease: 'easeIn' }}
+        className="ps-slim mt-[1rem] flex h-[56px] w-[95%] items-center justify-between rounded-[2rem] border-2 border-[#111928] py-1 pl-4 pr-1 sm:mt-0 md:w-[549px] lg:w-[458px]"
       >
         <input
           type="email"
@@ -137,12 +130,7 @@ const GetReady: React.FC<GetReadyProps> = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      <Button 
-  text="Submit" 
-  variant="solid" 
-  loading={loading} 
-  type="submit"
-/>
+        <Button text="Submit" variant="solid" loading={loading} type="submit" />
         {/* <SubmitBtn loading={loading} /> */}
       </motion.form>
 
@@ -153,12 +141,11 @@ const GetReady: React.FC<GetReadyProps> = ({
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.3, delay: 0.5, ease: "easeIn" }}
+        transition={{ duration: 0.3, delay: 0.5, ease: 'easeIn' }}
         className="flex w-[95%] justify-center sm:w-[620px] sm:items-center"
       >
         <div className="ps-slim w-[483px] text-center text-sm leading-5 sm:text-[1rem]">
-          By submitting this form you agree to receive Servgenie newsletters and
-          accept our
+          By submitting this form you agree to receive Servgenie newsletters and accept our
           <Link
             className="pl-1 pr-1 text-[#358ede] hover:underline"
             target="_blank"

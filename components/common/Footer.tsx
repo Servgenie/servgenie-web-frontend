@@ -7,9 +7,8 @@ import { scrollToSection } from '@/utils/navgiation';
 import { images } from '@/constants/assets';
 import Image from 'next/image';
 
-
 interface FooterProps {
-  menuItems: Array<{ label: string; sectionId: string }>;
+  menuItems: { label: string; sectionId: string }[];
 }
 
 const Footer: React.FC<FooterProps> = ({ menuItems }) => {
@@ -34,7 +33,10 @@ const Footer: React.FC<FooterProps> = ({ menuItems }) => {
 
   return (
     <>
-      <div className="md: mt-8 min-h-[30vh] md:h-[15vh] lg:mt-4 lg:h-[30vh] lg:px-[4rem]" ref={footerRef}>
+      <div
+        className="md: mt-8 min-h-[30vh] md:h-[15vh] lg:mt-4 lg:h-[30vh] lg:px-[4rem]"
+        ref={footerRef}
+      >
         <div className="flex flex-col items-center justify-center gap-7 sm:flex-row sm:justify-between sm:gap-5 md:px-8 lg:px-0">
           <motion.div
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
@@ -90,8 +92,20 @@ const Footer: React.FC<FooterProps> = ({ menuItems }) => {
           </div>
         </div>
       </div>
-      <Image src={images.footerBackground.src} alt={images.footerBackground.alt} className="mx-auto hidden lg:block" width={images.footerBackground.width} height={images.footerBackground.height} />
-      <Image src={images.footerBackground.src} alt={images.footerBackground.alt} className="mx-auto block w-[80%] sm:hidden" width={images.footerBackground.width} height={images.footerBackground.height} />
+      <Image
+        src={images.footerBackground.src}
+        alt={images.footerBackground.alt}
+        className="mx-auto hidden lg:block"
+        width={images.footerBackground.width}
+        height={images.footerBackground.height}
+      />
+      <Image
+        src={images.footerBackground.src}
+        alt={images.footerBackground.alt}
+        className="mx-auto block w-[80%] sm:hidden"
+        width={images.footerBackground.width}
+        height={images.footerBackground.height}
+      />
     </>
   );
 };

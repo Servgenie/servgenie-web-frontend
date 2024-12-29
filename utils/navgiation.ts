@@ -1,11 +1,11 @@
 export function scrollToSection(sectionId: string) {
-    if (!window) return
+  if (!window) return;
 
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
-    }
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
 }

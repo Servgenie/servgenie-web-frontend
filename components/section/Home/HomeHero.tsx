@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useAnimation, useInView, motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
-import Mobile from "./ImageCarousel/Mobile";
-import { images } from "@/constants/assets";
-import Image from "next/image";
-import Button from "@/components/common/Button";
-import { scrollToSection } from "@/utils/navgiation";
+import { useAnimation, useInView, motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import Mobile from './ImageCarousel/Mobile';
+import { images } from '@/constants/assets';
+import Image from 'next/image';
+import Button from '@/components/common/Button';
+import { scrollToSection } from '@/utils/navgiation';
 
 const HomeHero = () => {
   const heroRef = useRef(null);
@@ -15,22 +15,22 @@ const HomeHero = () => {
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("visible");
+      mainControls.start('visible');
     } else {
-      mainControls.start("hidden");
+      mainControls.start('hidden');
     }
   }, [isInView, mainControls]);
 
   return (
     <>
       <div
-        className='w-[95%] min-h-[438px] sm:h-[594px] md:h-[602px] mx-auto rounded-[24px] sm:rounded-[3rem] mt-3 sm:mt-4  relative  bg-[url("/assets/hero/bg.png")] bg-center bg-cover '
+        className='relative mx-auto mt-3 min-h-[438px] w-[95%] rounded-[24px] bg-[url("/assets/hero/bg.png")] bg-cover bg-center sm:mt-4 sm:h-[594px] sm:rounded-[3rem] md:h-[602px]'
         id="home"
         ref={heroRef}
       >
         {/* wave container */}
 
-        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center overflow-hidden">
+        <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center overflow-hidden">
           <svg
             width="1476"
             height="496"
@@ -70,11 +70,11 @@ const HomeHero = () => {
           }}
           initial="hidden"
           animate={mainControls}
-          transition={{ duration: 0.3, delay: 0.2, ease: "easeIn" }}
-          className="max-w-[90rem] h-fit px-6  mx-auto flex flex-col items-center justify-start gap-4 sm:gap-6 md:gap-10 pt-[70px] "
+          transition={{ duration: 0.3, delay: 0.2, ease: 'easeIn' }}
+          className="mx-auto flex h-fit max-w-[90rem] flex-col items-center justify-start gap-4 px-6 pt-[70px] sm:gap-6 md:gap-10"
         >
-          <div className="flex items-center  h-fit text-[32px] sm:text-[56px] lg:text-[5rem] leading-tight text-center font-bolder flex-col ps-bulky text-[#111928]">
-            <div className="flex  text-[40px] sm:text-[56px] lg:text-[6rem] leading-[48px] sm:leading-[56px] md:leading-[96px] ">
+          <div className="font-bolder ps-bulky flex h-fit flex-col items-center text-center text-[32px] leading-tight text-[#111928] sm:text-[56px] lg:text-[5rem]">
+            <div className="flex text-[40px] leading-[48px] sm:text-[56px] sm:leading-[56px] md:leading-[96px] lg:text-[6rem]">
               <p>Any wi</p>
 
               <Image
@@ -82,7 +82,7 @@ const HomeHero = () => {
                 height={images.logo.height}
                 src={images.logo.src}
                 alt={images.logo.alt}
-                className="w-[35px] md:w-[35px]  lg:w-[50px] mx-1 md:mt-6"
+                className="mx-1 w-[35px] md:mt-6 md:w-[35px] lg:w-[50px]"
               />
 
               <p>h</p>
@@ -91,9 +91,9 @@ const HomeHero = () => {
             <p>Anytime, Anywhere</p>
           </div>
 
-          <p className="text-center text-[#6B7280] ps-slim text-sm xs:text-base leading-snug sm:text-xl">
-            Finding help doesn't have to be complicated. Make a wish, and our
-            Genies will be at your fingertips.
+          <p className="ps-slim text-center text-sm leading-snug text-[#6B7280] xs:text-base sm:text-xl">
+            Finding help doesn't have to be complicated. Make a wish, and our Genies will be at your
+            fingertips.
           </p>
 
           <motion.div
@@ -103,14 +103,10 @@ const HomeHero = () => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{ duration: 0.3, delay: 0.4, ease: "easeIn" }}
-            className="w-full flex items-center justify-center z-50 "
+            transition={{ duration: 0.3, delay: 0.4, ease: 'easeIn' }}
+            className="z-50 flex w-full items-center justify-center"
           >
-            <Button
-              text="Join Now"
-              variant="gradient"
-              onClick={() => scrollToSection("join")}
-            />           
+            <Button text="Join Now" variant="gradient" onClick={() => scrollToSection('join')} />
           </motion.div>
         </motion.div>
       </div>

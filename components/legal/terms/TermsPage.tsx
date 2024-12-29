@@ -1,6 +1,6 @@
-import { EFFECTIVE_DATE } from '@/app/legal/common/constants'
-import React from 'react'
-import H2 from '../H2Legal'
+import { EFFECTIVE_DATE } from '@/app/legal/common/constants';
+import React from 'react';
+import H2 from '../H2Legal';
 
 export default function TermsPage() {
   return (
@@ -12,9 +12,9 @@ export default function TermsPage() {
 
       <section className="mb-6">
         <p>
-          Welcome to Servgenie (the “Site”), operated by Servgenie LLC (“Servgenie,”
-          “we,” or “us”). By accessing or using the Site, you agree to be bound by these Terms of
-          Service (the “Terms”). If you do not agree to these Terms, do not proceed.
+          Welcome to Servgenie (the “Site”), operated by Servgenie LLC (“Servgenie,” “we,” or “us”).
+          By accessing or using the Site, you agree to be bound by these Terms of Service (the
+          “Terms”). If you do not agree to these Terms, do not proceed.
         </p>
       </section>
 
@@ -101,9 +101,7 @@ export default function TermsPage() {
       </section>
 
       <section className="mb-6">
-        <H2>
-          9. Arbitration and Class Action Waiver
-        </H2>
+        <H2>9. Arbitration and Class Action Waiver</H2>
         <p>
           All disputes arising under these Terms will be resolved by binding arbitration pursuant to
           the Federal Arbitration Act. Arbitration will be conducted by a neutral arbitrator and
@@ -162,7 +160,7 @@ export default function TermsPage() {
         </p>
       </section>
 
-      <p className="mt-12 mb-16 text-center">Thank you for using Servgenie.</p>
+      <p className="mb-16 mt-12 text-center">Thank you for using Servgenie.</p>
     </section>
-  )
+  );
 }

@@ -12,9 +12,9 @@ const WhatWeOffer = () => {
   const [visisted2, setVisisted2] = useState(false);
   const [visisted3, setVisisted3] = useState(false);
   const [visisted4, setVisisted4] = useState(false);
-  const scrollTriggerRef = useRef<any>(null);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-  const whatWeOfferRef: any = useRef(null);
+  const whatWeOfferRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   const mainControls = useAnimation();
   const isInView = useInView(whatWeOfferRef, { once: false });
