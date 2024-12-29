@@ -48,9 +48,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prepare Husky Pre-commit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Our app uses Husky and Lint-Staged to ensure consistent code formatting before every commit. This setup automatically formats staged files using Prettier and ESLint.
+
+To enable pre-commit auto-formatting, run the following command after cloning the repository:
+`npm run prepare`
+
+This only needs to be ran once to generate the husky scripts under `.husky` (part of `.gitignore`) to install Husky hooks, allowing the pre-commit hook to automatically format your code.
+
 
 ## Learn More
 
