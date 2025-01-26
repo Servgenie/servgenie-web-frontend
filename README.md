@@ -17,6 +17,8 @@ If you are new to these technologies, we recommend you go through the official R
 
 ### Install Node
 
+#### Install NVM on Mac
+
 Install Node Version Manager (NVM)
 NVM allows you to manage and switch between Node.js versions seamlessly.
 
@@ -27,12 +29,26 @@ NVM allows you to manage and switch between Node.js versions seamlessly.
    nvm --version
    ```
 3. Install `vsc-nvm` plugin in VS Code to auto switch to the required Node version specified in `.nvmrc`
+4. Verify node is installed with correct version by running `node -v`
+
+#### Install FNM on Windows
+
+For windows, install via FNM
+
+1. Run the scripts suggested here: https://nodejs.org/en/download for LTS on Windows via `fnm`
+2. Verify node is installed with correct version by running `node -v`
 
 ### Dev Env Setup
+
+#### Setup the environment variables locally
 
 Create a `.env` file.
 Refer to `.env.example` for the required keys.
 Use the env values from Amplify QA environment.
+
+#### Install the dependencies
+
+Run `npm i` or `npm install`
 
 ### Run the Dev Server
 
