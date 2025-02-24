@@ -32,9 +32,9 @@ const Navbar: React.FC<NavbarProps> = ({
   }, [isInView, mainControls]);
 
   return (
-    <div className="z-50 sticky my-6 flex h-20 w-full justify-center  bg-transparent shadow-md">
+    <div className="z-50 flex w-full justify-center bg-transparent">
       <div
-        className={`absolute z-40 mx-auto w-full max-w-[24rem] rounded-[30px] bg-white py-3 shadow-[2px_4px_22px_-7px_rgba(143,82,255,0.4)] sm:max-w-[85rem]`}
+        className={`fixed top-1 z-40 mx-auto w-full max-w-[24rem] rounded-[30px] bg-white py-3 shadow-[2px_4px_22px_-7px_rgba(143,82,255,0.4)] sm:max-w-[85rem]`}
         id="navbar"
         ref={navbarRef}
       >
